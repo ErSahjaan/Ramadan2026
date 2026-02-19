@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ramadan Daily Blog 1447 · 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@100;200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --night:#050810;--deep:#08101F;--indigo:#0D1828;
+  --gold:#C9963C;--goldlt:#E8C06A;--goldfade:#F5DFA0;
+  --cream:#F7F0E0;--amber:#B8732A;--teal:#1A5C58;
+  --rose:#8C2A2A;--star:#FFFBE8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100vh;background:var(--night);font-family:'Josefin Sans',sans-serif;overflow-x:hidden}
+
+/* STARFIELD */
+.starfield{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:var(--star);animation:twinkle var(--d,3s) ease-in-out infinite var(--dl,0s)}
+@keyframes twinkle{0%,100%{opacity:var(--mn,.1);transform:scale(1)}50%{opacity:var(--mx,.8);transform:scale(1.5)}}
+.bg-glow{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 40% at 50% 30%,rgba(201,150,60,.1) 0%,transparent 65%),
+             radial-gradient(ellipse 30% 20% at 20% 70%,rgba(26,92,88,.06) 0%,transparent 60%)}
+.grain{position:fixed;inset:0;z-index:10;pointer-events:none;opacity:.02;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px}
+
+/* PAGE */
+.page{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+
+/* HEADER */
+.site-header{width:100%;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(201,150,60,.12);background:rgba(5,8,16,.9);
+  backdrop-filter:blur(20px);position:sticky;top:0;z-index:100}
+.logo-mark{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#1A5C58,#0D3530);
+  border:1px solid rgba(201,150,60,.4);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.logo-text{font-family:'Cinzel',serif;font-size:11px;font-weight:500;letter-spacing:.35em;color:var(--goldlt);text-transform:uppercase}
+.logo-sub{font-size:8px;letter-spacing:.25em;color:rgba(201,150,60,.45);text-transform:uppercase;margin-top:2px}
+.header-right{display:flex;align-items:center;gap:16px}
+.day-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.3em;color:rgba(201,150,60,.6);text-transform:uppercase}
+.streak-pill{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:99px;
+  background:rgba(201,150,60,.1);border:1px solid rgba(201,150,60,.25);cursor:pointer;transition:.2s}
+.streak-pill:hover{background:rgba(201,150,60,.18)}
+.streak-fire{font-size:12px}
+.streak-count{font-size:8px;letter-spacing:.2em;color:var(--goldlt)}
+.view-toggle{display:flex;gap:6px}
+.view-btn{width:30px;height:30px;border-radius:6px;border:1px solid rgba(201,150,60,.2);
+  background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.view-btn.active,.view-btn:hover{background:rgba(201,150,60,.12);border-color:rgba(201,150,60,.5)}
+.view-btn svg{width:14px;height:14px;stroke:rgba(201,150,60,.6);fill:none;stroke-width:1.5}
+
+/* HERO */
+.hero-strip{width:100%;padding:44px 40px 32px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.hero-arabic{font-family:'Amiri',serif;font-size:clamp(22px,4vw,36px);
+  background:linear-gradient(160deg,var(--goldfade),var(--goldlt),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:6px;
+  animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both}
+.hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(30px,5vw,52px);
+  background:linear-gradient(160deg,var(--goldfade),var(--goldlt),var(--amber));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both .15s}
+.hero-sub{font-size:9px;letter-spacing:.4em;color:rgba(247,240,224,.35);text-transform:uppercase;
+  animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both .3s}
+
+/* PROGRESS */
+.ramadan-progress{width:100%;max-width:700px;padding:0 40px 32px;animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both .4s}
+.progress-track{width:100%;height:3px;background:rgba(201,150,60,.1);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold),var(--goldlt));border-radius:2px;
+  box-shadow:0 0 12px rgba(232,192,106,.5);transition:width 1.2s cubic-bezier(.22,1,.36,1)}
+.progress-labels{display:flex;justify-content:space-between;margin-top:8px}
+.prog-label{font-size:8px;letter-spacing:.2em;color:rgba(201,150,60,.4);text-transform:uppercase}
+
+/* STATS ROW */
+.stats-row{display:flex;gap:16px;padding:0 40px 28px;width:100%;max-width:700px;animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both .45s}
+.stat-pill{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:12px 8px;border-radius:12px;background:rgba(201,150,60,.05);border:1px solid rgba(201,150,60,.12)}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;
+  background:linear-gradient(160deg,var(--goldfade),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-lbl{font-size:7px;letter-spacing:.3em;color:rgba(201,150,60,.4);text-transform:uppercase}
+
+/* FILTER TABS */
+.filter-tabs{display:flex;gap:8px;padding:0 40px 28px;overflow-x:auto;scrollbar-width:none;width:100%;max-width:960px;
+  animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both .5s}
+.filter-tabs::-webkit-scrollbar{display:none}
+.ftab{flex-shrink:0;padding:7px 18px;border:1px solid rgba(201,150,60,.18);border-radius:99px;
+  background:transparent;cursor:pointer;font-family:'Josefin Sans',sans-serif;font-size:9px;
+  letter-spacing:.25em;color:rgba(201,150,60,.5);text-transform:uppercase;transition:.22s;white-space:nowrap}
+.ftab.active,.ftab:hover{background:rgba(201,150,60,.1);border-color:rgba(201,150,60,.5);color:var(--goldlt)}
+.ftab.active{box-shadow:0 0 16px rgba(201,150,60,.15)}
+
+/* CARDS AREA */
+.cards-area{width:100%;max-width:1300px;padding:0 32px 80px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.cards-grid.feed-view{grid-template-columns:minmax(0,540px);justify-content:center}
+
+/* SINGLE CARD */
+.day-card{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;
+  animation:cardIn .6s cubic-bezier(.22,1,.36,1) both;animation-delay:var(--ci,0s);
+  transition:transform .3s ease,box-shadow .3s ease}
+.day-card:hover{transform:translateY(-8px);box-shadow:0 32px 80px rgba(0,0,0,.5),0 0 40px rgba(201,150,60,.12)}
+@keyframes cardIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+.theme-dawn  {background:linear-gradient(145deg,#0C1A28 0%,#1A2C44 40%,#0C1A28 100%)}
+.theme-quran {background:linear-gradient(145deg,#0D1C10 0%,#163A1C 40%,#0D1C10 100%)}
+.theme-dua   {background:linear-gradient(145deg,#1A0C20 0%,#2C1540 40%,#1A0C20 100%)}
+.theme-hadith{background:linear-gradient(145deg,#1C0A0A 0%,#3A1010 40%,#1C0A0A 100%)}
+.theme-iftar {background:linear-gradient(145deg,#1C1200 0%,#3A2A00 40%,#1C1200 100%)}
+.theme-suhoor{background:linear-gradient(145deg,#050C1C 0%,#0D1C38 40%,#050C1C 100%)}
+
+.day-card::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;
+  background:linear-gradient(145deg,rgba(201,150,60,.4) 0%,rgba(201,150,60,.08) 40%,rgba(201,150,60,.25) 100%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:5}
+.day-card::after{content:'';position:absolute;inset:0;border-radius:20px;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,150,60,.07) 0%,transparent 60%);
+  pointer-events:none;z-index:1}
+
+.card-geo{position:absolute;inset:0;opacity:.04;z-index:0;pointer-events:none;overflow:hidden}
+.card-geo svg{width:100%;height:100%}
+.card-inner{position:relative;z-index:2;padding:26px 26px 22px}
+
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.day-number{display:flex;flex-direction:column;gap:1px}
+.day-num-label{font-size:7px;letter-spacing:.35em;color:rgba(201,150,60,.4);text-transform:uppercase}
+.day-num-val{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:42px;line-height:1;
+  background:linear-gradient(170deg,var(--goldfade),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.day-type-badge{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:99px;
+  border:1px solid rgba(201,150,60,.25);background:rgba(201,150,60,.07)}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--badge-clr,var(--goldlt));
+  box-shadow:0 0 6px var(--badge-clr,var(--goldlt));animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+.badge-text{font-size:8px;letter-spacing:.25em;color:rgba(201,150,60,.7);text-transform:uppercase}
+
+.card-date-bar{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.date-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(201,150,60,.3),transparent)}
+.date-text{font-size:8px;letter-spacing:.2em;color:rgba(201,150,60,.45);text-transform:uppercase}
+
+.card-arabic{font-family:'Amiri',serif;font-size:20px;line-height:1.6;text-align:center;margin-bottom:14px;
+  direction:rtl;color:transparent;
+  background:linear-gradient(165deg,var(--goldfade),var(--goldlt),var(--gold));
+  -webkit-background-clip:text;background-clip:text;
+  padding:12px;border-bottom:1px solid rgba(201,150,60,.1)}
+
+.card-heading{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;
+  color:var(--goldfade);line-height:1.25;margin-bottom:8px;letter-spacing:.02em}
+.card-body{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;
+  color:rgba(247,240,224,.5);line-height:1.75;margin-bottom:14px;letter-spacing:.02em}
+.card-tip{padding:11px 14px;background:rgba(201,150,60,.06);border:1px solid rgba(201,150,60,.14);
+  border-radius:10px;margin-bottom:14px;display:flex;gap:10px;align-items:flex-start}
+.tip-icon{font-size:13px;flex-shrink:0;margin-top:1px}
+.tip-text{font-size:10.5px;letter-spacing:.03em;color:rgba(201,150,60,.7);line-height:1.6}
+.card-ref{font-size:8px;letter-spacing:.2em;color:rgba(201,150,60,.35);text-transform:uppercase;margin-bottom:18px}
+
+.card-actions{display:flex;align-items:center;justify-content:space-between;
+  padding-top:14px;border-top:1px solid rgba(201,150,60,.1)}
+.action-left{display:flex;gap:6px;align-items:center}
+.act-btn{display:flex;align-items:center;gap:5px;padding:7px 12px;border-radius:8px;
+  border:1px solid rgba(201,150,60,.18);background:transparent;cursor:pointer;transition:.2s;
+  font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:.2em;
+  color:rgba(201,150,60,.55);text-transform:uppercase}
+.act-btn:hover{background:rgba(201,150,60,.1);border-color:rgba(201,150,60,.4);color:var(--goldlt)}
+.act-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.5}
+.act-btn.liked{color:#E87070;border-color:rgba(232,112,112,.4)}
+.act-btn.liked svg{fill:rgba(232,112,112,.3)}
+.act-btn.liked:hover{background:rgba(232,112,112,.1)}
+.read-btn{display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;
+  border:1px solid rgba(100,180,160,.3);background:rgba(26,92,88,.15);cursor:pointer;transition:.2s;
+  font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:.2em;
+  color:rgba(100,200,180,.8);text-transform:uppercase}
+.read-btn:hover{background:rgba(26,92,88,.3);border-color:rgba(100,180,160,.6)}
+.read-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+.share-btn{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;
+  border:1px solid rgba(201,150,60,.4);
+  background:linear-gradient(135deg,rgba(201,150,60,.25),rgba(201,150,60,.12));
+  cursor:pointer;transition:.22s;font-family:'Josefin Sans',sans-serif;font-size:8px;
+  letter-spacing:.25em;color:var(--goldlt);text-transform:uppercase}
+.share-btn:hover{background:linear-gradient(135deg,rgba(201,150,60,.4),rgba(201,150,60,.2));
+  box-shadow:0 4px 20px rgba(201,150,60,.25);transform:translateY(-1px)}
+.share-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* READ MORE label on card */
+.card-read-more{position:absolute;bottom:0;left:0;right:0;height:60px;
+  background:linear-gradient(transparent,rgba(5,8,16,.8));
+  display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;
+  opacity:0;transition:opacity .3s;pointer-events:none}
+.day-card:hover .card-read-more{opacity:1}
+.card-read-more span{font-size:8px;letter-spacing:.3em;color:rgba(201,150,60,.7);text-transform:uppercase}
+
+/* FEATURED */
+.featured-card{width:100%;max-width:700px;border-radius:24px;overflow:hidden;margin:0 auto 36px;
+  position:relative;animation:fadeUp .9s cubic-bezier(.22,1,.36,1) both .2s;
+  box-shadow:0 24px 80px rgba(0,0,0,.6),0 0 60px rgba(201,150,60,.1)}
+.featured-card::before{content:'';position:absolute;inset:0;border-radius:24px;padding:1.5px;
+  background:linear-gradient(145deg,rgba(201,150,60,.7),rgba(201,150,60,.15),rgba(201,150,60,.5));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:5}
+.featured-badge{position:absolute;top:20px;right:20px;z-index:10;padding:6px 16px;border-radius:99px;
+  background:linear-gradient(135deg,var(--gold),var(--amber));font-size:8px;letter-spacing:.3em;
+  color:#050810;text-transform:uppercase;font-weight:500;box-shadow:0 4px 20px rgba(201,150,60,.4);
+  animation:pulse-badge 2s ease-in-out infinite}
+@keyframes pulse-badge{0%,100%{box-shadow:0 4px 20px rgba(201,150,60,.4)}50%{box-shadow:0 4px 30px rgba(201,150,60,.7)}}
+.featured-inner{position:relative;z-index:2;
+  background:linear-gradient(145deg,#0C1420 0%,#142238 30%,#0D1C14 60%,#1A1000 100%);
+  padding:36px 40px 32px}
+.featured-geo{position:absolute;inset:0;opacity:.05;pointer-events:none}
+.featured-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px}
+.featured-day-num{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:80px;line-height:.9;
+  background:linear-gradient(170deg,rgba(245,223,160,.4),rgba(201,150,60,.2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.featured-moon{font-size:48px;opacity:.7;animation:moon-float 4s ease-in-out infinite}
+@keyframes moon-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.featured-arabic{font-family:'Amiri',serif;font-size:clamp(22px,3.5vw,34px);text-align:center;direction:rtl;
+  margin-bottom:8px;background:linear-gradient(160deg,var(--goldfade),var(--goldlt),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 16px rgba(201,150,60,.3))}
+.featured-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(22px,3vw,32px);
+  color:var(--goldfade);text-align:center;line-height:1.2;margin-bottom:6px}
+.featured-sub{font-size:9px;letter-spacing:.3em;color:rgba(201,150,60,.4);text-align:center;
+  text-transform:uppercase;margin-bottom:24px}
+.featured-verse-box{padding:18px 22px;border:1px solid rgba(201,150,60,.2);border-radius:14px;
+  background:rgba(201,150,60,.04);margin-bottom:18px;position:relative}
+.featured-verse-box::before{content:'"';position:absolute;top:-10px;left:14px;
+  font-family:'Cormorant Garamond',serif;font-size:42px;line-height:1;color:rgba(201,150,60,.3)}
+.featured-verse{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;
+  color:rgba(247,240,224,.65);line-height:1.8;text-align:center}
+.featured-ref{font-size:8px;letter-spacing:.25em;color:rgba(201,150,60,.4);text-align:center;
+  text-transform:uppercase;margin-top:10px}
+.featured-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.big-share-btn{display:flex;align-items:center;gap:8px;padding:12px 26px;border-radius:12px;
+  background:linear-gradient(135deg,var(--gold),var(--amber));border:none;cursor:pointer;transition:.22s;
+  font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.3em;color:#050810;
+  text-transform:uppercase;font-weight:500;box-shadow:0 6px 24px rgba(201,150,60,.35)}
+.big-share-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,150,60,.5)}
+.big-read-btn{display:flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;
+  background:rgba(26,92,88,.25);border:1px solid rgba(26,180,160,.35);cursor:pointer;transition:.22s;
+  font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.3em;
+  color:rgba(100,210,190,.9);text-transform:uppercase}
+.big-read-btn:hover{background:rgba(26,92,88,.45);transform:translateY(-2px)}
+.big-save-btn{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;
+  background:rgba(201,150,60,.1);border:1px solid rgba(201,150,60,.3);cursor:pointer;transition:.22s;
+  font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.3em;color:var(--goldlt);text-transform:uppercase}
+.big-save-btn:hover{background:rgba(201,150,60,.18)}
+.big-share-btn svg,.big-read-btn svg,.big-save-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8}
+
+/* SECTION HEADER */
+.section-header{padding:0 0 20px;display:flex;align-items:center;justify-content:space-between}
+.sec-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.4em;color:rgba(201,150,60,.6);text-transform:uppercase}
+.sec-line{flex:1;height:1px;margin-left:20px;background:linear-gradient(90deg,rgba(201,150,60,.25),transparent)}
+
+/* ══════════════════════════════════════════════
+   MODAL — Full Du'a / Verse Reader
+══════════════════════════════════════════════ */
+.modal-overlay{position:fixed;inset:0;z-index:500;display:flex;align-items:flex-end;justify-content:center;
+  background:rgba(3,6,14,.0);pointer-events:none;transition:background .4s}
+.modal-overlay.open{background:rgba(3,6,14,.85);pointer-events:all;backdrop-filter:blur(6px)}
+.modal-sheet{width:100%;max-width:780px;max-height:92vh;border-radius:28px 28px 0 0;overflow:hidden;
+  background:linear-gradient(160deg,#090E1C 0%,#0D1824 50%,#08140E 100%);
+  border-top:1px solid rgba(201,150,60,.25);border-left:1px solid rgba(201,150,60,.1);border-right:1px solid rgba(201,150,60,.1);
+  box-shadow:0 -30px 100px rgba(0,0,0,.8),0 0 80px rgba(201,150,60,.08);
+  transform:translateY(100%);transition:transform .45s cubic-bezier(.22,1,.36,1);
+  display:flex;flex-direction:column;will-change:transform}
+.modal-overlay.open .modal-sheet{transform:translateY(0)}
+
+.modal-handle{width:40px;height:4px;background:rgba(201,150,60,.25);border-radius:2px;margin:14px auto 0;flex-shrink:0}
+.modal-close{position:absolute;top:16px;right:20px;width:32px;height:32px;border-radius:50%;
+  border:1px solid rgba(201,150,60,.25);background:rgba(201,150,60,.08);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:10}
+.modal-close:hover{background:rgba(201,150,60,.2);border-color:rgba(201,150,60,.5)}
+.modal-close svg{width:14px;height:14px;stroke:rgba(201,150,60,.7);fill:none;stroke-width:2}
+
+.modal-scroll{overflow-y:auto;flex:1;padding:24px 36px 48px;scrollbar-width:thin;scrollbar-color:rgba(201,150,60,.2) transparent}
+.modal-scroll::-webkit-scrollbar{width:4px}
+.modal-scroll::-webkit-scrollbar-thumb{background:rgba(201,150,60,.2);border-radius:2px}
+
+/* Modal top info */
+.modal-type-row{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.modal-type-badge{display:flex;align-items:center;gap:6px;padding:5px 14px;border-radius:99px;
+  border:1px solid rgba(201,150,60,.3);background:rgba(201,150,60,.08)}
+.modal-day-tag{font-size:8px;letter-spacing:.3em;color:rgba(201,150,60,.4);text-transform:uppercase}
+.modal-date{font-size:8px;letter-spacing:.25em;color:rgba(201,150,60,.35);text-transform:uppercase}
+
+/* Modal arabic block */
+.modal-arabic-block{text-align:center;padding:28px 20px;margin-bottom:24px;position:relative}
+.modal-arabic-block::before{content:'';position:absolute;inset:0;border-radius:16px;
+  background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(201,150,60,.06),transparent);
+  border:1px solid rgba(201,150,60,.1)}
+.modal-arabic-main{font-family:'Amiri',serif;font-size:clamp(26px,4vw,40px);line-height:1.8;
+  direction:rtl;color:transparent;
+  background:linear-gradient(160deg,var(--goldfade),var(--goldlt),var(--gold));
+  -webkit-background-clip:text;background-clip:text;margin-bottom:16px;
+  filter:drop-shadow(0 2px 20px rgba(201,150,60,.2))}
+.modal-transliteration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;
+  color:rgba(201,150,60,.5);margin-bottom:10px;letter-spacing:.04em}
+.modal-translation{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;
+  color:rgba(247,240,224,.6);line-height:1.7;letter-spacing:.02em}
+
+/* Full verse section */
+.modal-section{margin-bottom:28px}
+.modal-section-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.4em;
+  color:rgba(201,150,60,.45);text-transform:uppercase;margin-bottom:14px;
+  display:flex;align-items:center;gap:12px}
+.modal-section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,150,60,.2),transparent)}
+
+.full-verse-box{padding:20px 24px;border-radius:14px;background:rgba(5,8,16,.6);
+  border:1px solid rgba(201,150,60,.15);position:relative;overflow:hidden}
+.full-verse-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,150,60,.3),transparent)}
+.full-verse-arabic{font-family:'Amiri',serif;font-size:clamp(18px,3vw,26px);line-height:2;
+  direction:rtl;text-align:right;color:rgba(245,223,160,.8);margin-bottom:16px;padding-bottom:16px;
+  border-bottom:1px solid rgba(201,150,60,.1)}
+.full-verse-translation{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;
+  color:rgba(247,240,224,.6);line-height:1.85;margin-bottom:12px}
+.full-verse-ref{font-size:8px;letter-spacing:.25em;color:rgba(201,150,60,.4);text-transform:uppercase}
+.verse-highlight{display:inline;background:rgba(201,150,60,.12);border-radius:3px;
+  padding:0 3px;color:rgba(245,223,160,.9)}
+
+/* Context box */
+.context-box{padding:18px 20px;border-radius:12px;background:rgba(26,92,88,.08);
+  border:1px solid rgba(26,180,160,.15)}
+.context-text{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(247,240,224,.55);
+  line-height:1.8}
+
+/* Hadith chain */
+.hadith-chain{display:flex;flex-direction:column;gap:0}
+.chain-item{display:flex;gap:14px;align-items:flex-start;padding:12px 0;
+  border-bottom:1px solid rgba(201,150,60,.07)}
+.chain-item:last-child{border-bottom:none}
+.chain-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,150,60,.3);
+  border:1px solid rgba(201,150,60,.6);flex-shrink:0;margin-top:5px}
+.chain-text{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(247,240,224,.5);
+  line-height:1.7;font-style:italic}
+.chain-label{font-size:7px;letter-spacing:.3em;color:rgba(201,150,60,.4);text-transform:uppercase;margin-top:2px}
+
+/* Dua benefits */
+.dua-benefits{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.benefit-card{padding:14px;border-radius:10px;background:rgba(201,150,60,.05);
+  border:1px solid rgba(201,150,60,.12)}
+.benefit-icon{font-size:18px;margin-bottom:6px}
+.benefit-title{font-size:8px;letter-spacing:.25em;color:rgba(201,150,60,.6);text-transform:uppercase;margin-bottom:4px}
+.benefit-text{font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(247,240,224,.5);line-height:1.6}
+
+/* When to recite */
+.recite-times{display:flex;flex-wrap:wrap;gap:8px}
+.recite-pill{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:99px;
+  background:rgba(26,92,88,.1);border:1px solid rgba(26,180,160,.2)}
+.recite-icon{font-size:11px}
+.recite-text{font-size:9px;letter-spacing:.15em;color:rgba(100,200,180,.7)}
+
+/* Navigation arrows */
+.modal-nav{display:flex;justify-content:space-between;align-items:center;
+  padding:0 36px 16px;flex-shrink:0;border-top:1px solid rgba(201,150,60,.08)}
+.modal-nav-info{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.3em;
+  color:rgba(201,150,60,.4);text-align:center}
+.nav-arrow{display:flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px;
+  border:1px solid rgba(201,150,60,.2);background:rgba(201,150,60,.06);cursor:pointer;transition:.2s;
+  font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:.2em;
+  color:rgba(201,150,60,.6);text-transform:uppercase}
+.nav-arrow:hover{background:rgba(201,150,60,.14);border-color:rgba(201,150,60,.4);color:var(--goldlt)}
+.nav-arrow:disabled{opacity:.25;pointer-events:none}
+.nav-arrow svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* Modal bottom actions */
+.modal-actions{display:flex;gap:10px;padding:16px 36px 24px;flex-shrink:0;
+  border-top:1px solid rgba(201,150,60,.1)}
+.modal-share{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--amber));
+  border:none;cursor:pointer;transition:.22s;font-family:'Josefin Sans',sans-serif;
+  font-size:9px;letter-spacing:.3em;color:#050810;text-transform:uppercase;font-weight:500}
+.modal-share:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(201,150,60,.4)}
+.modal-like{display:flex;align-items:center;gap:6px;padding:12px 20px;border-radius:12px;
+  border:1px solid rgba(201,150,60,.25);background:rgba(201,150,60,.08);cursor:pointer;transition:.2s;
+  font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.2em;
+  color:rgba(201,150,60,.7);text-transform:uppercase}
+.modal-like:hover,.modal-like.liked{background:rgba(232,112,112,.1);border-color:rgba(232,112,112,.4);color:#E87070}
+.modal-share svg,.modal-like svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8}
+.modal-like.liked svg{fill:rgba(232,112,112,.4)}
+
+/* TOAST */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);z-index:999;opacity:0;
+  padding:12px 24px;border-radius:99px;background:rgba(14,24,48,.95);border:1px solid rgba(201,150,60,.4);
+  backdrop-filter:blur(20px);font-size:10px;letter-spacing:.25em;color:var(--goldlt);text-transform:uppercase;
+  transition:all .3s cubic-bezier(.22,1,.36,1);white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .site-header{padding:16px 18px}
+  .hero-strip,.ramadan-progress,.filter-tabs,.stats-row{padding-left:18px;padding-right:18px}
+  .cards-area{padding:0 14px 80px}
+  .cards-grid{grid-template-columns:1fr}
+  .featured-inner{padding:22px 20px 20px}
+  .modal-scroll{padding:20px 20px 40px}
+  .modal-nav,.modal-actions{padding-left:20px;padding-right:20px}
+  .dua-benefits{grid-template-columns:1fr}
+  .featured-actions{flex-direction:column;align-items:stretch}
+  .streak-pill{display:none}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="starfield" id="starfield"></div>
+<div class="bg-glow"></div>
+<div class="toast" id="toast"></div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-sheet" id="modal-sheet">
+    <div class="modal-handle"></div>
+    <button class="modal-close" onclick="closeModal()">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-scroll" id="modal-content"></div>
+    <div class="modal-nav">
+      <button class="nav-arrow" id="nav-prev" onclick="navModal(-1)">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Prev Day
+      </button>
+      <div class="modal-nav-info" id="nav-info">Day 1 of 30</div>
+      <button class="nav-arrow" id="nav-next" onclick="navModal(1)">
+        Next Day
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-share" id="modal-share-btn" onclick="shareModalDay()">
+        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share This Du'a
+      </button>
+      <button class="modal-like" id="modal-like-btn" onclick="toggleModalLike()">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Save
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <header class="site-header">
+    <div class="logo-mark">
+      <div class="logo-icon">☽</div>
+      <div>
+        <div class="logo-text">Ramadan Blog</div>
+        <div class="logo-sub">1447 Hijri · 2026</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="streak-pill" onclick="showToast('🔥 Keep it up! Daily reading streak active')">
+        <span class="streak-fire">🔥</span>
+        <span class="streak-count" id="streak-count">1 Day Streak</span>
+      </div>
+      <div class="day-badge" id="current-day-label">Day 1 of 30</div>
+      <div class="view-toggle">
+        <button class="view-btn active" id="grid-btn" onclick="setView('grid')" title="Grid">
+          <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+        </button>
+        <button class="view-btn" id="feed-btn" onclick="setView('feed')" title="Feed">
+          <svg viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="4" rx="1"/><rect x="1" y="7" width="14" height="4" rx="1"/><rect x="1" y="13" width="14" height="2" rx="1"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero-strip">
+    <div class="hero-arabic">رَمَضَانُ كَرِيمٌ</div>
+    <div class="hero-title">30 Days of Blessings</div>
+    <div class="hero-sub">Tap any card to read the full Du'a, Ayah & Context</div>
+  </div>
+
+  <div class="ramadan-progress">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="progress-labels">
+      <span class="prog-label">1st Ramadan</span>
+      <span class="prog-label" id="prog-mid"></span>
+      <span class="prog-label">30th Ramadan</span>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-pill"><div class="stat-val" id="stat-days">1</div><div class="stat-lbl">Day Today</div></div>
+    <div class="stat-pill"><div class="stat-val" id="stat-left">29</div><div class="stat-lbl">Days Left</div></div>
+    <div class="stat-pill"><div class="stat-val" id="stat-read">0</div><div class="stat-lbl">Read Today</div></div>
+    <div class="stat-pill"><div class="stat-val">30</div><div class="stat-lbl">Total Blessings</div></div>
+  </div>
+
+  <div class="filter-tabs">
+    <button class="ftab active" onclick="filterCards('all',this)">✦ All Days</button>
+    <button class="ftab" onclick="filterCards('quran',this)">📖 Quran</button>
+    <button class="ftab" onclick="filterCards('dua',this)">🤲 Du'a</button>
+    <button class="ftab" onclick="filterCards('hadith',this)">📜 Hadith</button>
+    <button class="ftab" onclick="filterCards('iftar',this)">🌙 Iftar</button>
+    <button class="ftab" onclick="filterCards('suhoor',this)">⭐ Suhoor</button>
+  </div>
+
+  <div class="cards-area">
+    <div id="featured-area"></div>
+    <div class="section-header">
+      <span class="sec-title">All 30 Days — Tap to Read Full Du'a</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="cards-grid" id="cards-grid"></div>
+  </div>
+</div>
+
+<script>
+/* ── EXTENDED DATA ── */
+const DAYS = [
+  {
+    id:1,type:'quran',theme:'theme-quran',
+    arabic:'يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ',
+    transliteration:'Yā ayyuhā alladhīna āmanū kutiba ʿalaykumu l-ṣiyāmu kamā kutiba ʿalā alladhīna min qablikum laʿallakum tattaqūn',
+    translation:'O you who have believed, decreed upon you is fasting as it was decreed upon those before you that you may become righteous.',
+    heading:'The Gift of Fasting',
+    body:'Fasting is not merely abstaining from food and drink — it is a full surrender of the soul, a turning of the heart toward the Divine.',
+    fullVerseContext:'This verse is the primary Quranic commandment establishing the obligation of Ramadan fasting. Allah addresses the believers directly with "Yā ayyuhā alladhīna āmanū" — a phrase that demands full attention. The command to fast (Saum) is followed by the purpose: Taqwa (God-consciousness, piety). The mention of previous nations shows fasting is a universal act of worship, not unique to Islam alone.',
+    fullArabicExtended:'يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ ﴿١٨٣﴾\nأَيَّامًا مَّعْدُودَاتٍ ۚ فَمَن كَانَ مِنكُم مَّرِيضًا أَوْ عَلَىٰ سَفَرٍ فَعِدَّةٌ مِّنْ أَيَّامٍ أُخَرَ ﴿١٨٤﴾',
+    fullTranslation:'O you who have believed, decreed upon you is fasting as it was decreed upon those before you that you may become righteous [183]. [Fasting for] a limited number of days. So whoever among you is ill or on a journey [during them] — then an equal number of days [are to be made up] [184].',
+    tip:'Start each day with the intention: "I fast for Allah alone."',
+    tipIcon:'🌟',
+    ref:'Surah Al-Baqarah 2:183–184',
+    date:'1st Ramadan 1447',
+    benefits:['Earns Taqwa (God-consciousness)','Follows the Sunnah of all Prophets','Opens gates of Divine mercy','Purifies the soul and body'],
+    whenToRecite:['Before beginning the fast','During Fajr salah reflection','When feeling the difficulty of hunger'],
+    hadithNote:'The Prophet ﷺ said: "Whoever fasts Ramadan with sincere faith and seeking reward from Allah, all his past sins will be forgiven." [Bukhari 2014]'
+  },
+  {
+    id:2,type:'dua',theme:'theme-dua',
+    arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ رَحْمَتَكَ يَا أَرْحَمَ الرَّاحِمِينَ',
+    transliteration:"Allāhumma innī as'aluka raḥmataka yā arḥama r-rāḥimīn",
+    translation:'O Allah, I ask You for Your mercy, O Most Merciful of the merciful.',
+    heading:'Open the Gates of Mercy',
+    body:'The first ten days of Ramadan overflow with the mercy of Allah. Every breath, every step, every moment is soaked in divine compassion.',
+    fullVerseContext:"This du'a calls upon Allah's attribute of Ar-Rahman (the Most Merciful), one of His greatest names. The first ten days of Ramadan are specifically associated with Rahmah (mercy). Scholars note that Allah's mercy encompasses all things — reciting this du'a with presence of heart opens the heart to receive that infinite mercy.",
+    fullArabicExtended:'اللَّهُمَّ إِنِّي أَسْأَلُكَ رَحْمَتَكَ\nيَا أَرْحَمَ الرَّاحِمِينَ\nوَأَنْ تُدْخِلَنِي فِي رَحْمَتِكَ\nإِنَّكَ أَنتَ الرَّحْمَنُ الرَّحِيمُ',
+    fullTranslation:'O Allah, I ask You for Your mercy, O Most Merciful of the merciful. And that You enter me into Your mercy. Indeed You are the Most Gracious, Most Merciful.',
+    tip:"Recite 100 times: 'Subhanallah wa bihamdih' after Fajr.",
+    tipIcon:'🤲',
+    ref:'Hadith — Abu Dawood',
+    date:'2nd Ramadan 1447',
+    benefits:['Invokes the greatest of Divine attributes','Connects to the first 10 days of Mercy','Softens the heart toward others','A means of having all du\'as accepted'],
+    whenToRecite:['After each of the five daily prayers','During sujood (prostration)','At iftar time when du\'as are most accepted','In the final third of the night'],
+    hadithNote:"The Prophet ﷺ said: 'Ramadan is a month whose beginning is mercy, middle is forgiveness, and end is salvation from the Fire.' [Ibn Khuzaymah]"
+  },
+  {
+    id:3,type:'hadith',theme:'theme-hadith',
+    arabic:'صَوْمُ رَمَضَانَ إِيمَاناً وَاحْتِسَاباً غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ',
+    transliteration:"Ṣawmu ramaḍāna īmānan wa-ḥtisāban ghufira lahu mā taqaddama min dhanbih",
+    translation:'Whoever fasts Ramadan with sincere faith and seeking reward from Allah, all his past sins will be forgiven.',
+    heading:'Fasting with Faith',
+    body:'The Prophet ﷺ said: Whoever fasts Ramadan with sincere faith and seeking reward, all his past sins will be forgiven.',
+    fullVerseContext:"This is one of the most beloved hadiths of Ramadan, narrated by Abu Hurairah (RA). The two conditions are crucial: Iman (sincere faith — believing Ramadan is an obligation from Allah) and Ihtisab (seeking reward — doing it purely for Allah's sake, not for praise or habit). When both conditions are met, the promise of complete forgiveness of past sins is guaranteed by the Prophet ﷺ himself.",
+    fullArabicExtended:'عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:\nمَنْ صَامَ رَمَضَانَ إِيمَاناً وَاحْتِسَاباً\nغُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ',
+    fullTranslation:'On the authority of Abu Hurairah (may Allah be pleased with him), the Messenger of Allah ﷺ said: Whoever fasts the month of Ramadan out of sincere faith and seeking reward from Allah, all his previous sins will be forgiven.',
+    tip:'Renew your niyyah (intention) each morning before Fajr.',
+    tipIcon:'📜',
+    ref:'Sahih Bukhari 2014 · Sahih Muslim 760',
+    date:'3rd Ramadan 1447',
+    benefits:['Complete forgiveness of past sins','Elevation of spiritual rank','Inner peace and freedom from guilt','Direct promise from the Prophet ﷺ'],
+    whenToRecite:['Renew niyyah every morning','Reflect on this hadith at suhoor','Share with family at iftar'],
+    hadithNote:"Imam Nawawi states: 'This hadith is among the greatest glad tidings in Islam, showing the magnitude of Ramadan's reward for the sincere believer.'"
+  },
+  {
+    id:4,type:'iftar',theme:'theme-iftar',
+    arabic:'ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِن شَاءَ اللَّهُ',
+    transliteration:"Dhahaba l-ẓamā'u wa-btallati l-ʿurūqu wa-thabata l-ajru in shā'a llāh",
+    translation:'The thirst has gone, the veins are moistened, and the reward is confirmed, if Allah wills.',
+    heading:'The Sweetness of Iftar',
+    body:'When you break your fast, you experience the first of two joys — the joy at breaking fast, and the greater joy of meeting your Lord.',
+    fullVerseContext:"This is the authentic du'a the Prophet ﷺ would say upon breaking his fast. It contains three beautiful affirmations: (1) the physical thirst is quenched, (2) the blood vessels are refreshed with life-giving fluid, and (3) most powerfully — the reward with Allah is confirmed. The phrase 'in shā'a Allāh' is an expression of humility, not doubt.",
+    fullArabicExtended:'عَنِ ابْنِ عُمَرَ رَضِيَ اللَّهُ عَنْهُمَا:\nكَانَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ إِذَا أَفْطَرَ قَالَ:\nذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ\nوَثَبَتَ الْأَجْرُ إِن شَاءَ اللَّهُ',
+    fullTranslation:'On the authority of Ibn Umar (RA): When the Prophet ﷺ broke his fast he would say: The thirst has gone, the veins are moistened, and the reward is established, if Allah wills.',
+    tip:'Break fast with 3 dates and water, as the Sunnah teaches.',
+    tipIcon:'🌙',
+    ref:'Abu Dawood 2357 · Daraqutni (Hasan)',
+    date:'4th Ramadan 1447',
+    benefits:['Follows the exact Sunnah of the Prophet ﷺ','Confirms reward is sealed','Expresses gratitude for sustenance','Connects physical nourishment to spiritual reward'],
+    whenToRecite:['At the exact moment of breaking fast','While reaching for the first date','Before drinking water at maghrib'],
+    hadithNote:"Ibn Abbas (RA) narrated: 'The fasting person has at the time of breaking fast a du'a that is not rejected.' [Ibn Majah] — Use this moment wisely."
+  },
+  {
+    id:5,type:'quran',theme:'theme-quran',
+    arabic:'شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَىٰ وَالْفُرْقَانِ',
+    transliteration:"Shahru ramaḍāna lladhī unzila fīhi l-qur'ānu hudan li-n-nāsi wa-bayyinātin mina l-hudā wa-l-furqān",
+    translation:'The month of Ramadan in which was revealed the Quran, as guidance for humanity and clear evidence of guidance and the standard of right and wrong.',
+    heading:'The Month of the Quran',
+    body:'Ramadan was chosen above all months because in it the Quran descended — a light for mankind, a guidance, a mercy from the Most Merciful.',
+    fullVerseContext:"This verse reveals why Ramadan was specifically chosen as the month of fasting. The Quran began its descent on Laylatul Qadr — a single night worth more than a thousand months. The verse gives three descriptions of the Quran: (1) Huda — complete guidance for all humanity, (2) Bayyinat — clear, manifest proofs, and (3) Al-Furqan — the Criterion that distinguishes truth from falsehood.",
+    fullArabicExtended:'شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ\nهُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَىٰ وَالْفُرْقَانِ ۚ\nفَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ ۖ\nوَمَن كَانَ مَرِيضًا أَوْ عَلَىٰ سَفَرٍ فَعِدَّةٌ مِّنْ أَيَّامٍ أُخَرَ ۗ\nيُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ وَلَا يُرِيدُ بِكُمُ الْعُسْرَ',
+    fullTranslation:'The month of Ramadan in which was revealed the Quran — guidance for humanity and clear evidence of guidance and the Criterion. Whoever witnesses the month among you — let him fast it. And whoever is ill or on a journey — then an equal number of other days. Allah intends ease for you and does not intend hardship for you.',
+    tip:'Set a goal: one juz (chapter) per day to complete the Quran.',
+    tipIcon:'📖',
+    ref:'Surah Al-Baqarah 2:185',
+    date:'5th Ramadan 1447',
+    benefits:['Understanding Ramadan\'s sacred purpose','Connection to the Quran\'s divine origin','Motivation to recite and reflect','Reminder of Allah\'s ease and mercy'],
+    whenToRecite:['Before beginning Quran recitation','During taraweeh reflection','When sharing the meaning of Ramadan'],
+    hadithNote:"Jibril would review the entire Quran with the Prophet ﷺ every night in Ramadan. In his final year, they reviewed it twice. [Bukhari 3554]"
+  },
+  {
+    id:6,type:'suhoor',theme:'theme-suhoor',
+    arabic:'تَسَحَّرُوا فَإِنَّ فِي السَّحُورِ بَرَكَةً',
+    transliteration:"Tasaḥḥarū fa-inna fī s-saḥūri barakah",
+    translation:'Eat suhoor (pre-dawn meal), for indeed in suhoor there is blessing.',
+    heading:'The Blessing of Suhoor',
+    body:"The pre-dawn meal is not just nourishment for the body — it carries the blessing of angels who descend and make du'a for those who rise.",
+    fullVerseContext:"This hadith is a direct command from the Prophet ﷺ — 'tasaḥḥarū' is an imperative verb meaning 'eat suhoor.' The blessing (barakah) of suhoor is multilayered: physical strength for the day's fast, the spiritual act of waking before Fajr (making one eligible for tahajjud), and the moment of divine presence in the final third of the night when Allah descends and answers prayers.",
+    fullArabicExtended:'عَنْ أَنَسِ بْنِ مَالِكٍ رَضِيَ اللَّهُ عَنْهُ عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:\nتَسَحَّرُوا فَإِنَّ فِي السَّحُورِ بَرَكَةً\n\nوَعَنْهُ: فَصْلُ مَا بَيْنَ صِيَامِنَا وَصِيَامِ أَهْلِ الْكِتَابِ أَكْلَةُ السَّحَرِ',
+    fullTranslation:'On the authority of Anas ibn Malik (RA), from the Prophet ﷺ: "Eat suhoor, for in suhoor there is blessing." And from the same: "The distinction between our fasting and that of the People of the Book is the pre-dawn meal."',
+    tip:'Wake 20 minutes early for dhikr before Fajr begins.',
+    tipIcon:'⭐',
+    ref:'Sahih Bukhari 1923 · Sahih Muslim 1095',
+    date:'6th Ramadan 1447',
+    benefits:['Physical strength for the day\'s fast','Eligibility for the blessed final night hours','Distinction of the Islamic fast','Opportunity for tahajjud prayer'],
+    whenToRecite:['Upon waking for suhoor','As a reminder to family and friends','During the suhoor meal as dhikr'],
+    hadithNote:"The Prophet ﷺ said: 'The best suhoor for the believer is dates.' [Abu Dawood] — Even a sip of water counts as suhoor and earns the blessing."
+  },
+  {
+    id:7,type:'dua',theme:'theme-dua',
+    arabic:'اللَّهُمَّ إِنَّكَ عَفُوٌّ كَرِيمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
+    transliteration:"Allāhumma innaka ʿafuwwun karīmun tuḥibbu l-ʿafwa fa-ʿfu ʿannī",
+    translation:'O Allah, You are Most Forgiving, Most Generous, You love to forgive, so forgive me.',
+    heading:"Du'a of Laylatul Qadr",
+    body:"Though Laylatul Qadr awaits in the final ten nights, the angels begin recording our deeds from the very first day we submit ourselves.",
+    fullVerseContext:"Aisha (RA) asked the Prophet ﷺ: 'O Messenger of Allah, if I know which night is Laylatul Qadr, what should I say?' He replied with this du'a. It is the most recommended supplication for the odd nights of the last ten days. The du'a focuses on 'Afw — forgiveness that erases completely, unlike Maghfirah which covers. Al-Karim adds that Allah forgives generously without stinginess.",
+    fullArabicExtended:'عَنْ عَائِشَةَ رَضِيَ اللَّهُ عَنْهَا قَالَتْ:\nقُلْتُ يَا رَسُولَ اللَّهِ أَرَأَيْتَ إِنْ عَلِمْتُ أَيُّ لَيْلَةٍ لَيْلَةُ الْقَدْرِ مَا أَقُولُ فِيهَا؟\nقَالَ: قُولِي:\nاللَّهُمَّ إِنَّكَ عَفُوٌّ كَرِيمٌ\nتُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
+    fullTranslation:'Aisha (RA) said: I asked: O Messenger of Allah, if I know which night is Laylatul Qadr, what should I say in it? He said: Say: "O Allah, You are the Pardoner, Most Generous, You love to pardon, so pardon me."',
+    tip:"Memorize this du'a and repeat it on the odd nights of the last 10.",
+    tipIcon:'✨',
+    ref:'Tirmidhi 3513 · Ibn Majah 3850 (Authentic)',
+    date:'7th Ramadan 1447',
+    benefits:['The most recommended du\'a for Laylatul Qadr','Invokes \'Afw — complete erasure of sins','Short, powerful, and easy to memorize','Chosen by the Prophet ﷺ himself'],
+    whenToRecite:['Every odd night in the last ten: 21, 23, 25, 27, 29','Repeat continuously in sujood','Between adhan and iqamah','During the final third of night'],
+    hadithNote:"'Afw differs from Maghfirah: Maghfirah means Allah covers the sin — 'Afw means He erases it entirely as if it never happened.' — Ibn Al-Qayyim"
+  },
+  {
+    id:8,type:'hadith',theme:'theme-hadith',
+    arabic:'مَنْ قَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ',
+    transliteration:"Man qāma ramaḍāna īmānan wa-ḥtisāban ghufira lahu mā taqaddama min dhanbih",
+    translation:'Whoever stands (in prayer) during Ramadan out of sincere faith and seeking reward, his previous sins are forgiven.',
+    heading:'Night Prayer in Ramadan',
+    body:'Every night in Ramadan the gates of Paradise are swung open and the gates of Hell are shut. Taraweeh prayer is your invitation to enter.',
+    fullVerseContext:"This hadith is the companion to the fasting hadith (Bukhari 2014) — the same conditions of Iman and Ihtisab apply to Qiyam (standing in prayer). Taraweeh is the specific term for the extended night prayers of Ramadan. Scholars note this includes any night prayer — even 2 rakaahs prayed at home with sincerity earns this magnificent reward.",
+    fullArabicExtended:'عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ:\nكَانَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يُرَغِّبُ فِي قِيَامِ رَمَضَانَ\nمِنْ غَيْرِ أَنْ يَأْمُرَهُمْ بِعَزِيمَةٍ فَيَقُولُ:\nمَنْ قَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا\nغُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ',
+    fullTranslation:'On the authority of Abu Hurairah (RA): The Messenger of Allah ﷺ would encourage standing in prayer in Ramadan without commanding them strictly, saying: "Whoever stands in prayer during Ramadan out of sincere faith and seeking reward, his previous sins are forgiven."',
+    tip:'Pray Taraweeh every night, even if only 2 rakaahs at home.',
+    tipIcon:'🕌',
+    ref:'Sahih Bukhari 37 · Sahih Muslim 759',
+    date:'8th Ramadan 1447',
+    benefits:['Complete forgiveness of past sins','Night prayer doubles the reward of Ramadan','Creates a habit of qiyam beyond Ramadan','Strengthens relationship with the Quran'],
+    whenToRecite:['Before beginning taraweeh','As motivation after a tiring day','Share with others to encourage night prayer'],
+    hadithNote:"Umar ibn Al-Khattab (RA) organized the congregational taraweeh and said: 'What an excellent innovation this is!' — referring to the organized congregation, not a new act of worship. [Bukhari 2010]"
+  },
+  {
+    id:9,type:'quran',theme:'theme-quran',
+    arabic:'وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ',
+    transliteration:"Wa-idhā sa'alaka ʿibādī ʿannī fa-innī qarīb, ujību daʿwata d-dāʿi idhā daʿān",
+    translation:'And when My servants ask you concerning Me — indeed I am near. I respond to the invocation of the supplicant when he calls upon Me.',
+    heading:'Allah is Near',
+    body:'In Ramadan, the veil between the servant and the Divine grows thin. Allah says: I am close — I respond to every sincere call.',
+    fullVerseContext:"This verse is uniquely placed inside the Ramadan verses (2:183–187) — between the fasting commandment and its details. This placement is deliberate: Allah inserts a verse about His nearness and responsiveness to du'a right in the middle of the fasting legislation. Scholars see this as a direct message: 'While you fast for Me, know that I am close and listening.' Note that Allah says 'I respond' (Ujib) not 'I might respond' — it is a Divine promise.",
+    fullArabicExtended:'وَإِذَا سَأَلَكَ عِبَادِي عَنِّي\nفَإِنِّي قَرِيبٌ ۖ\nأُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ ۖ\nفَلْيَسْتَجِيبُوا لِي وَلْيُؤْمِنُوا بِي\nلَعَلَّهُمْ يَرْشُدُونَ',
+    fullTranslation:'And when My servants ask you concerning Me — indeed I am near. I respond to the invocation of the supplicant when he calls upon Me. So let them respond to Me and believe in Me that they may be guided.',
+    tip:"Make personal du'a in your own language — Allah hears all.",
+    tipIcon:'💫',
+    ref:'Surah Al-Baqarah 2:186',
+    date:'9th Ramadan 1447',
+    benefits:['Absolute certainty that Allah hears every du\'a','Positioned inside Ramadan verses — extra significance','Removes despair and hopelessness from the heart','Encourages continuous and personal du\'a'],
+    whenToRecite:['At iftar time when du\'as are most accepted','During the quiet of suhoor','Whenever feeling distant from Allah'],
+    hadithNote:"Three people's du'as are never rejected: the fasting person at the time of breaking fast, the just ruler, and the oppressed person. [Tirmidhi 3598]"
+  },
+  {
+    id:10,type:'iftar',theme:'theme-iftar',
+    arabic:'لِلصَّائِمِ فَرْحَتَانِ يَفْرَحُهُمَا فَرْحَةٌ عِندَ فِطْرِهِ وَفَرْحَةٌ عِندَ لِقَاءِ رَبِّهِ',
+    transliteration:"Li-ṣ-ṣā'imi farḥatāni yafraḥuhumā: farḥatun ʿinda fiṭrihi wa-farḥatun ʿinda liqā'i rabbih",
+    translation:'The fasting person has two moments of joy: joy when he breaks his fast, and joy when he meets his Lord.',
+    heading:'Two Moments of Joy',
+    body:'The fasting person has two moments of pure joy: when he breaks his fast in the evening, and when he meets his Lord on the Day of Judgment.',
+    fullVerseContext:"This is part of the sacred Qudsi hadith in which Allah Himself speaks. The full hadith describes how Allah honors the fasting person uniquely on the Day of Judgment. The first joy (iftar) is immediate and earthly — the relief of breaking a long fast. The second joy is eternal and transcendent — the joy of meeting Allah face to face, which scholars describe as the greatest happiness any created being can experience.",
+    fullArabicExtended:'قَالَ اللَّهُ عَزَّ وَجَلَّ (حَدِيثٌ قُدْسِيٌّ):\nكُلُّ عَمَلِ ابْنِ آدَمَ لَهُ إِلَّا الصِّيَامَ فَإِنَّهُ لِي وَأَنَا أَجْزِي بِهِ\nوَالصِّيَامُ جُنَّةٌ\nوَإِذَا كَانَ يَوْمُ صَوْمِ أَحَدِكُمْ فَلَا يَرْفُثْ وَلَا يَصْخَبْ\nفَإِنْ سَابَّهُ أَحَدٌ أَوْ قَاتَلَهُ فَلْيَقُلْ إِنِّي امْرُؤٌ صَائِمٌ\nوَلِلصَّائِمِ فَرْحَتَانِ يَفْرَحُهُمَا\nفَرْحَةٌ عِندَ فِطْرِهِ وَفَرْحَةٌ عِندَ لِقَاءِ رَبِّهِ',
+    fullTranslation:'Allah the Mighty and Majestic said (Hadith Qudsi): "Every deed of the son of Adam is for him except fasting — it is for Me and I will reward it. Fasting is a shield. On the day when one of you fasts, let him not act indecently or shout. If someone insults him or fights him, let him say: I am a fasting person. The fasting person has two moments of joy: joy when he breaks his fast, and joy when he meets his Lord."',
+    tip:'Gather family for iftar — shared meals carry extra barakah.',
+    tipIcon:'🌅',
+    ref:'Sahih Muslim 1151 · Sahih Bukhari 1904',
+    date:'10th Ramadan 1447',
+    benefits:['Fasting is the only deed Allah claims as His own','Two guaranteed moments of joy','Shield against the Fire','Direct reward from Allah Himself'],
+    whenToRecite:['As motivation during a difficult fast','Share at the iftar table','When teaching children about Ramadan'],
+    hadithNote:"The smell emanating from the mouth of a fasting person is more beloved to Allah than the scent of musk. [Muslim 1151] — Even the discomfort of fasting is honored by Allah."
+  },
+  {
+    id:11,type:'dua',theme:'theme-dua',
+    arabic:'رَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ إِنَّكَ أَنتَ التَّوَّابُ الرَّحِيمُ',
+    transliteration:"Rabbi ghfir lī wa-tub ʿalayya innaka anta t-tawwābu r-raḥīm",
+    translation:'My Lord, forgive me and accept my repentance. Indeed, You are the Ever-Returning to mercy, the Most Merciful.',
+    heading:'Seeking Forgiveness',
+    body:'The second decade of Ramadan opens with the gates of forgiveness. This is the sacred window — turn to Allah and He will turn to you.',
+    fullVerseContext:"Ibn Umar (RA) narrated that the Prophet ﷺ would say this du'a a hundred times in every sitting. The name 'At-Tawwab' means the One who constantly turns in mercy toward His servant — emphasizing that repentance is always accepted. This du'a is also the du'a of Prophet Adam (AS) in the Quran after his error in the garden. The second ten nights of Ramadan are specifically the nights of Maghfirah (forgiveness).",
+    fullArabicExtended:'عَنِ ابْنِ عُمَرَ رَضِيَ اللَّهُ عَنْهُمَا قَالَ:\nكُنَّا نَعُدُّ لِرَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ فِي الْمَجْلِسِ الْوَاحِدِ:\nرَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ\nإِنَّكَ أَنتَ التَّوَّابُ الرَّحِيمُ\nمِائَةَ مَرَّةٍ',
+    fullTranslation:'Ibn Umar (RA) said: We used to count for the Messenger of Allah ﷺ in a single sitting: "My Lord, forgive me and accept my repentance. Indeed, You are the Ever-Returning to mercy, the Most Merciful." — a hundred times.',
+    tip:"After each salah say: 'Astaghfirullah' 100 times.",
+    tipIcon:'🌺',
+    ref:'Tirmidhi 3434 · Abu Dawood 1516 (Sahih)',
+    date:'11th Ramadan 1447',
+    benefits:['Practiced 100 times per sitting by the Prophet ﷺ','Connects to the second ten nights (forgiveness)','Clears spiritual weight from the heart','Opens doors of divine mercy'],
+    whenToRecite:['After every salah', 'During the second ten nights of Ramadan','Between sujood in prayer','100 times continuously in any sitting'],
+    hadithNote:"Allah says: 'O son of Adam, as long as you call upon Me and place your hope in Me, I will forgive you for what you have done, and I do not mind.' [Tirmidhi 3540]"
+  },
+  {
+    id:12,type:'hadith',theme:'theme-hadith',
+    arabic:'أَفْضَلُ الصَّدَقَةِ صَدَقَةٌ فِي رَمَضَانَ',
+    transliteration:"Afḍalu ṣ-ṣadaqati ṣadaqatun fī ramaḍān",
+    translation:'The best charity is charity given in Ramadan.',
+    heading:'Charity Multiplied',
+    body:'Every good deed in Ramadan is multiplied seventy times — and the most beloved deed to Allah in this month is giving in charity.',
+    fullVerseContext:"Ibn Abbas (RA) described the Prophet ﷺ as 'the most generous of people, and he was most generous in Ramadan when Jibril would meet with him.' This hadith establishes Ramadan as the supreme month for sadaqah. Scholars note that while every deed is multiplied in Ramadan, charitable giving specifically carries the additional weight of alleviating the suffering of others — making it doubly beloved.",
+    fullArabicExtended:'عَنِ ابْنِ عَبَّاسٍ رَضِيَ اللَّهُ عَنْهُمَا قَالَ:\nكَانَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَجْوَدَ النَّاسِ\nوَكَانَ أَجْوَدَ مَا يَكُونُ فِي رَمَضَانَ حِينَ يَلْقَاهُ جِبْرِيلُ\nوَقَالَ: أَفْضَلُ الصَّدَقَةِ صَدَقَةٌ فِي رَمَضَانَ',
+    fullTranslation:'Ibn Abbas (RA) said: The Prophet ﷺ was the most generous of people, and he was most generous in Ramadan when Jibril would meet with him. And he said: "The best charity is charity given in Ramadan."',
+    tip:'Feed one person their iftar — it earns the reward of their fast.',
+    tipIcon:'❤️',
+    ref:'Tirmidhi 663 · Bayhaqi',
+    date:'12th Ramadan 1447',
+    benefits:['Multiplied exponentially compared to other months','Frees the giver from the Fire','Earns the reward of the recipient\'s fast','Follows the prophetic example of generosity'],
+    whenToRecite:['When preparing for charity','Before donating to a cause','When sponsoring someone\'s iftar'],
+    hadithNote:"'Whoever provides iftar for a fasting person will have a reward like theirs, without any reduction in the fasting person's reward.' [Tirmidhi 807] — Even providing water counts."
+  },
+  {
+    id:13,type:'quran',theme:'theme-quran',
+    arabic:'وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ',
+    transliteration:"Wa-naḥnu aqrabu ilayhi min ḥabli l-warīd",
+    translation:'And We are closer to him than his jugular vein.',
+    heading:'Closer Than a Heartbeat',
+    body:'Allah is closer to you than your jugular vein. In Ramadan, this closeness becomes tangible — felt in the hunger, the prayer, the tears.',
+    fullVerseContext:"The jugular vein (Wariid) is the vein in the neck that carries blood from the head to the heart — the very vein that sustains life. Allah's closeness is described as more intimate than this. This is closeness through knowledge (He knows every thought, every secret) and closeness through care (He is watching over us constantly). In Ramadan, this verse becomes experientially real — the hunger, the thirst, the night prayers all become moments where His nearness is felt.",
+    fullArabicExtended:'وَلَقَدْ خَلَقْنَا الْإِنسَانَ وَنَعْلَمُ مَا تُوَسْوِسُ بِهِ نَفْسُهُ ۖ\nوَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ ﴿١٦﴾\nإِذْ يَتَلَقَّى الْمُتَلَقِّيَانِ عَنِ الْيَمِينِ وَعَنِ الشِّمَالِ قَعِيدٌ ﴿١٧﴾',
+    fullTranslation:'And We have already created man and know what his soul whispers to him, and We are closer to him than his jugular vein [16]. When the two receivers receive, seated on the right and on the left [17].',
+    tip:'Sit with the Quran for 15 minutes after each prayer.',
+    tipIcon:'📖',
+    ref:'Surah Qaf 50:16',
+    date:'13th Ramadan 1447',
+    benefits:['Certainty that Allah knows our innermost thoughts','Eliminates the feeling of loneliness','Increases sincerity in worship','Motivates private worship — Allah sees what others cannot'],
+    whenToRecite:['During moments of loneliness or sadness','When struggling with sincerity','In the darkness of night prayer'],
+    hadithNote:"The Prophet ﷺ said: 'If you were to lower a bucket into the earth, it would land on Allah.' [Tirmidhi] — scholars interpret this as His complete knowledge encompassing everything."
+  },
+  {
+    id:14,type:'suhoor',theme:'theme-suhoor',
+    arabic:'اللَّهُمَّ إِنِّي لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ',
+    transliteration:"Allāhumma innī laka ṣumtu wa-ʿalā rizqika afṭartu",
+    translation:'O Allah, I have fasted for You and with Your provision I break my fast.',
+    heading:'Midpoint — Renew Your Heart',
+    body:'You stand at the halfway mark of the blessed month. Look back with gratitude, look forward with ambition. The best is yet to come.',
+    fullVerseContext:"This du'a is recited before iftar and encapsulates the complete theology of Ramadan: 'Laka' (for You) — the fast belongs exclusively to Allah. 'Rizqika' (Your provision) — every morsel of food is from Him. Fasting and feasting are both acts of worship when done with this consciousness. The halfway point of Ramadan is also a moment of renewal — scholars recommend a spiritual audit: have I prayed all prayers? Read sufficient Quran? Given charity?",
+    fullArabicExtended:'اللَّهُمَّ إِنِّي لَكَ صُمْتُ\nوَعَلَى رِزْقِكَ أَفْطَرْتُ\nسُبْحَانَكَ وَبِحَمْدِكَ\nاللَّهُمَّ تَقَبَّلْ مِنِّي\nإِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ',
+    fullTranslation:'O Allah, I have fasted for You, and with Your provision I break my fast. Glory be to You and all praise. O Allah, accept from me — indeed You are the All-Hearing, All-Knowing.',
+    tip:'Write down three spiritual goals for the second half.',
+    tipIcon:'🌙',
+    ref:'Abu Dawood 2358 · Bayhaqi',
+    date:'14th Ramadan 1447',
+    benefits:['Renews sincere intention at iftar','Acknowledges Allah as the sole Provider','A complete du\'a combining praise and gratitude','Recommended daily at the breaking of fast'],
+    whenToRecite:['Just before breaking the fast at Maghrib','While reaching for the first food','Teach children to say it before iftar'],
+    hadithNote:"At the midpoint of Ramadan, increase your efforts: 'The best of deeds are those done consistently, even if small.' [Bukhari 6464] — Do not plateau now."
+  },
+  {
+    id:15,type:'dua',theme:'theme-dua',
+    arabic:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ سُبْحَانَ اللَّهِ الْعَظِيمِ',
+    transliteration:"Subḥāna llāhi wa-biḥamdih, subḥāna llāhi l-ʿaẓīm",
+    translation:'Glory be to Allah and all praise belongs to Him. Glory be to Allah, the Magnificent.',
+    heading:'The Lightest Words',
+    body:'"Glory be to Allah and all praise is His" — two phrases light on the tongue, heavy on the scale, beloved by the Most Merciful.',
+    fullVerseContext:"Abu Hurairah (RA) narrated this hadith with the Prophet ﷺ saying these two phrases are 'light on the tongue, heavy on the scale, beloved to the Most Merciful.' SubhanAllah acknowledges Allah's absolute perfection and freedom from all deficiency. Al-Hamdulillah is total praise and gratitude. Al-Azeem refers to Allah's attribute of supreme greatness — a name mentioned in Ayat Al-Kursi.",
+    fullArabicExtended:'عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ:\nكَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ\nثَقِيلَتَانِ فِي الْمِيزَانِ\nحَبِيبَتَانِ إِلَى الرَّحْمَنِ:\nسُبْحَانَ اللَّهِ وَبِحَمْدِهِ\nسُبْحَانَ اللَّهِ الْعَظِيمِ',
+    fullTranslation:'On the authority of Abu Hurairah (RA), from the Prophet ﷺ: "Two phrases are light on the tongue, heavy on the scales, beloved to the Most Merciful: Glory be to Allah and His is all praise; Glory be to Allah, the Magnificent."',
+    tip:'100 times after Fajr wipes away sins even if like sea foam.',
+    tipIcon:'✨',
+    ref:'Sahih Bukhari 6682 · Sahih Muslim 2694',
+    date:'15th Ramadan 1447',
+    benefits:['Heavy on the scales on the Day of Judgment','Beloved to Allah — among His favorite dhikr','Easy to say anytime, anywhere','Fills time between acts of worship with reward'],
+    whenToRecite:['100 times after Fajr prayer','While walking, waiting, or resting','Before sleep and after waking','Fill any idle moment with these words'],
+    hadithNote:"'SubhanAllah wa bihamdih' said 100 times: sins are forgiven even if they are as abundant as sea foam. [Bukhari 6405] — The most cost-effective spiritual investment."
+  },
+  {
+    id:16,type:'hadith',theme:'theme-hadith',
+    arabic:'الصَّوْمُ جُنَّةٌ فَلَا يَرْفُثْ وَلَا يَجْهَلْ فَإِنِ امْرُؤٌ قَاتَلَهُ فَلْيَقُلْ إِنِّي صَائِمٌ',
+    transliteration:"Aṣ-ṣawmu junnatun fa-lā yarfuth wa-lā yajhal, fa-in imru'un qātalahu fa-l-yaqul innī ṣā'im",
+    translation:'Fasting is a shield; so the fasting person should not speak rudely or behave foolishly. If someone fights him, let him say: I am fasting.',
+    heading:'Fasting is a Shield',
+    body:'The Prophet ﷺ said: Fasting is a shield — so let not the fasting person say anything rude or act ignorantly. If provoked, say "I am fasting."',
+    fullVerseContext:"The word 'Junnah' means a shield or armor. Fasting protects from sin in this world and from the Fire in the Hereafter. This hadith teaches that fasting must transform behavior — if the tongue, temper, and character are not improved, the physical fast is incomplete. The instruction to say 'I am fasting' is both an outward reminder to others and an inward reminder to oneself.",
+    fullArabicExtended:'عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:\nالصِّيَامُ جُنَّةٌ\nفَإِذَا كَانَ يَوْمُ صَوْمِ أَحَدِكُمْ\nفَلَا يَرْفُثْ يَوْمَئِذٍ وَلَا يَصْخَبْ\nفَإِنْ سَابَّهُ أَحَدٌ أَوْ قَاتَلَهُ\nفَلْيَقُلْ إِنِّي امْرُؤٌ صَائِمٌ',
+    fullTranslation:'On the authority of Abu Hurairah (RA), the Messenger of Allah ﷺ said: "Fasting is a shield. So when one of you is fasting, let him not speak indecently or shout. If someone insults him or picks a fight with him, let him say: I am a fasting person."',
+    tip:'Guard your tongue today as carefully as your fast.',
+    tipIcon:'🛡️',
+    ref:'Sahih Bukhari 1894 · Sahih Muslim 1151',
+    date:'16th Ramadan 1447',
+    benefits:['Shield against sin and the Hellfire','Teaches restraint of tongue and anger','Creates a habit of dignified responses','Makes fasting a complete act of worship'],
+    whenToRecite:['When provoked or in a tense situation','As a daily reminder before leaving home','When teaching children about the etiquette of fasting'],
+    hadithNote:"'Whoever does not give up lying and acting upon falsehood, Allah has no need of him giving up food and drink.' [Bukhari 1903] — Fasting must transform character."
+  },
+  {
+    id:17,type:'quran',theme:'theme-quran',
+    arabic:'إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ',
+    transliteration:"Inna llāha yuḥibbu t-tawwābīna wa-yuḥibbu l-mutaṭahhirīn",
+    translation:'Indeed, Allah loves those who are constantly repentant and loves those who purify themselves.',
+    heading:'The Beauty of Repentance',
+    body:'Allah loves those who turn back to Him — and Ramadan is the season of turning. No sin is too heavy for His mercy to lift.',
+    fullVerseContext:"This verse contains two of the most beautiful divine loves: 'At-Tawwabun' — those who repeatedly repent, not just once. The Arabic form indicates constant repetition — Allah loves the one who keeps turning back, even if they keep falling. 'Al-Mutatahhirun' — those who purify themselves, both physically (through wudu, ghusl) and spiritually (through tawbah). In Ramadan, both dimensions of purification are intensified.",
+    fullArabicExtended:'نِسَاؤُكُمْ حَرْثٌ لَّكُمْ فَأْتُوا حَرْثَكُمْ أَنَّىٰ شِئْتُمْ ۖ\nوَقَدِّمُوا لِأَنفُسِكُمْ ۚ\nوَاتَّقُوا اللَّهَ وَاعْلَمُوا أَنَّكُم مُّلَاقُوهُ ۗ\nوَبَشِّرِ الْمُؤْمِنِينَ ﴿٢٢٣﴾\nإِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ ﴿٢٢٢﴾',
+    fullTranslation:'[From Surah Al-Baqarah 2:222] Indeed, Allah loves those who are constantly repentant and loves those who purify themselves.',
+    tip:'Make sincere tawbah before sleeping each night this week.',
+    tipIcon:'💚',
+    ref:'Surah Al-Baqarah 2:222',
+    date:'17th Ramadan 1447',
+    benefits:['Earns the love of Allah — the greatest spiritual achievement','Encourages repeated repentance without despair','Connects physical purity to spiritual purification','Applicable after every mistake, not just major sins'],
+    whenToRecite:['Before sleeping every night in Ramadan','After performing wudu','When making tawbah for sins'],
+    hadithNote:"'Allah is more pleased with the repentance of His servant than one of you would be upon finding your lost camel in a waterless desert.' [Muslim 2747] — Your tawbah brings Allah joy."
+  },
+  {
+    id:18,type:'iftar',theme:'theme-iftar',
+    arabic:'اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ فَتَقَبَّلْ مِنِّي',
+    transliteration:"Allāhumma laka ṣumtu wa-ʿalā rizqika afṭartu fa-taqabbal minnī",
+    translation:'O Allah, I have fasted for You and with Your provision I break my fast — so accept it from me.',
+    heading:'Gratitude at Iftar',
+    body:"As the dates touch your lips and water cools your throat, whisper thanks. This provision comes from Allah alone — every drop, a mercy.",
+    fullVerseContext:"The addition of 'Fa-taqabbal minnī' (so accept it from me) elevates this du'a — it is both gratitude and prayer. The fasting person acknowledges the day's worship and humbly asks for its acceptance. Ibrahim (AS) said the same after building the Ka'bah: 'Rabbana taqabbal minnā.' This humility — recognizing that even our best deeds require divine acceptance — is the hallmark of the true believer.",
+    fullArabicExtended:'اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ\nفَتَقَبَّلْ مِنِّي إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ\n\nوَقَالَ إِبْرَاهِيمُ عَلَيْهِ السَّلَامُ:\nرَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ',
+    fullTranslation:'O Allah, I have fasted for You and with Your provision I break my fast — so accept it from me. Indeed You are the All-Hearing, All-Knowing. [And Ibrahim (AS) said:] Our Lord, accept from us. Indeed You are the All-Hearing, All-Knowing.',
+    tip:'Before eating, say the iftar du\'a slowly and with presence.',
+    tipIcon:'🍃',
+    ref:'Abu Dawood 2358 · Surah Al-Baqarah 2:127',
+    date:'18th Ramadan 1447',
+    benefits:['Completes the fast with gratitude and humility','Adds the prayer of acceptance to the iftar','Echoes the du\'a of the Prophets','The word "taqabbal" means acceptance of the entire day\'s worship'],
+    whenToRecite:['Precisely at Maghrib adhan','Before the first bite of food','Teach children to say it every evening'],
+    hadithNote:"Ibrahim and Ismail (AS) said 'Rabbana taqabbal minna' while building the Ka'bah [2:127] — no deed, however great, is too significant to need Allah's acceptance."
+  },
+  {
+    id:19,type:'dua',theme:'theme-dua',
+    arabic:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',
+    transliteration:"Rabbanā ātinā fī d-dunyā ḥasanatan wa-fī l-ākhirati ḥasanatan wa-qinā ʿadhāba n-nār",
+    translation:'Our Lord, grant us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.',
+    heading:'The Complete Prayer',
+    body:'The most complete du\'a: O Lord, grant us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.',
+    fullVerseContext:"Anas (RA) narrated that this was the Prophet ﷺ's most frequent du'a. The ayah before it describes people who ask only for worldly things, while this verse describes those who seek both worlds. 'Hasanah' in this world means health, sustenance, righteous family, beneficial knowledge, and good character. 'Hasanah' in the Hereafter means Paradise and the vision of Allah. The du'a ends with protection from the Fire — the greatest fear.",
+    fullArabicExtended:'وَمِنَ النَّاسِ مَن يَقُولُ رَبَّنَا آتِنَا فِي الدُّنْيَا ۖ\nوَمَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ ﴿٢٠٠﴾\nوَمِنْهُم مَّن يَقُولُ رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً\nوَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ ﴿٢٠١﴾\nأُولَٰئِكَ لَهُمْ نَصِيبٌ مِّمَّا كَسَبُوا ۚ\nوَاللَّهُ سَرِيعُ الْحِسَابِ ﴿٢٠٢﴾',
+    fullTranslation:'And among them is he who says: "Our Lord, give us in this world [good]" — and he will have no share in the Hereafter [200]. But among them is he who says: "Our Lord, give us good in this world and good in the Hereafter and protect us from the punishment of the Fire" [201]. Those will have a share of what they have earned, and Allah is swift in account [202].',
+    tip:'Recite this between the two sujood and after tashahud.',
+    tipIcon:'🤲',
+    ref:'Surah Al-Baqarah 2:201',
+    date:'19th Ramadan 1447',
+    benefits:['Covers all needs of both worlds in one supplication','The Prophet ﷺ\'s most repeated du\'a','Simple, comprehensive, always relevant','Protects from the greatest calamity: the Fire'],
+    whenToRecite:['Between the two sujood in every prayer','After tashahud before salam','During tawaf around the Ka\'bah','As a general daily du\'a at any time'],
+    hadithNote:"Anas (RA) said: 'The most frequent du'a of the Prophet ﷺ was this.' [Bukhari 6389] — If the Prophet ﷺ made this his most repeated prayer, it should be ours too."
+  },
+  {
+    id:20,type:'hadith',theme:'theme-hadith',
+    arabic:'مَنْ فَطَّرَ صَائِمًا كَانَ لَهُ مِثْلُ أَجْرِهِ غَيْرَ أَنَّهُ لَا يَنْقُصُ مِنْ أَجْرِ الصَّائِمِ شَيْءٌ',
+    transliteration:"Man faṭṭara ṣā'iman kāna lahu mithlu ajrihi ghayra annahu lā yanquṣu min ajri ṣ-ṣā'imi shay'",
+    translation:"Whoever provides iftar for a fasting person will have a reward like theirs, without any reduction in the fasting person's reward.",
+    heading:'Share the Reward',
+    body:"Whoever provides iftar for a fasting person receives the same reward as the faster — without any reduction in the fasting person's reward.",
+    fullVerseContext:"This hadith is among the most beloved for its generosity: both the giver and the receiver gain the same full reward. The qualifier 'even if only with a date, or a sip of water, or a gulp of milk' (in extended narrations) shows that the amount given doesn't limit the reward. The value is in the act of feeding a fasting person. This is why feeding iftar to others is considered one of the greatest acts of worship in Ramadan.",
+    fullArabicExtended:'عَنْ زَيْدِ بْنِ خَالِدٍ الْجُهَنِيِّ رَضِيَ اللَّهُ عَنْهُ:\nقَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:\nمَنْ فَطَّرَ صَائِمًا كَانَ لَهُ مِثْلُ أَجْرِهِ\nغَيْرَ أَنَّهُ لَا يَنْقُصُ مِنْ أَجْرِ الصَّائِمِ شَيْءٌ\n(وَلَوْ بِتَمْرَةٍ أَوْ شَرْبَةِ مَاءٍ أَوْ مَذْقَةِ لَبَنٍ)',
+    fullTranslation:'On the authority of Zayd ibn Khalid Al-Juhani (RA): The Messenger of Allah ﷺ said: "Whoever provides iftar for a fasting person will have a reward like theirs, without any reduction in the fasting person\'s reward." (Even if it is only a date, a sip of water, or a gulp of milk.)',
+    tip:'Invite someone to your iftar table this week.',
+    tipIcon:'🌟',
+    ref:'Tirmidhi 807 · Ibn Majah 1746 (Sahih)',
+    date:'20th Ramadan 1447',
+    benefits:['Earns the full reward of another person\'s fast','Even a date or water earns this reward','Multiplied reward with no subtraction from others','One of the most generous rewards in Islamic teaching'],
+    whenToRecite:['When planning to feed others','As motivation to be generous','Share with those who want to earn reward in Ramadan'],
+    hadithNote:"The Prophet ﷺ was 'the most generous person, and he was most generous in Ramadan.' [Bukhari 1902] — Let his character inspire your charity this month."
+  },
+  {
+    id:21,type:'quran',theme:'theme-quran',
+    arabic:'إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ ۝ وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ ۝ لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ',
+    transliteration:"Innā anzalnāhu fī laylati l-qadr, wa-mā adrāka mā laylatu l-qadr, laylatu l-qadri khayrun min alfi shahr",
+    translation:'Indeed, We sent it down during the Night of Decree. And what can make you know what is the Night of Decree? The Night of Decree is better than a thousand months.',
+    heading:'Prepare for Laylatul Qadr',
+    body:'The Night of Power is better than a thousand months. In these final ten nights, every hour of worship is worth eighty-three years.',
+    fullVerseContext:"Surah Al-Qadr is a complete 5-verse chapter dedicated solely to Laylatul Qadr. 'Wa-mā adrāka' is a rhetorical question indicating the grandeur is beyond ordinary comprehension. A thousand months is 83 years and 4 months — effectively a lifetime. The Quran descended on this night, and the decree for the coming year is set. The angels and Ruh (Jibril) descend, and peace reigns until dawn.",
+    fullArabicExtended:'إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ ﴿١﴾\nوَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ ﴿٢﴾\nلَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ ﴿٣﴾\nتَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ ﴿٤﴾\nسَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ ﴿٥﴾',
+    fullTranslation:'Indeed, We sent it (the Quran) down during the Night of Decree [1]. And what can make you know what is the Night of Decree? [2]. The Night of Decree is better than a thousand months [3]. The angels and the Spirit descend therein by permission of their Lord for every matter [4]. Peace it is until the emergence of dawn [5].',
+    tip:"Begin I'tikaf or extended night worship from tonight.",
+    tipIcon:'⭐',
+    ref:'Surah Al-Qadr 97:1–5',
+    date:'21st Ramadan 1447',
+    benefits:['Understanding the supreme value of these nights','Motivation for maximum worship in the last 10','Connection to the Quran\'s divine revelation','Awareness that angels surround the worshipper'],
+    whenToRecite:['Read this Surah every night of the last ten','Use it to motivate family for night worship','Recite in taraweeh with reflection'],
+    hadithNote:"'Seek Laylatul Qadr in the last ten nights of Ramadan, and specifically in the odd nights.' [Bukhari 2017] — Don't let a single odd night pass without maximum worship."
+  },
+  {
+    id:22,type:'suhoor',theme:'theme-suhoor',
+    arabic:'وَقُرْآنَ الْفَجْرِ إِنَّ قُرْآنَ الْفَجْرِ كَانَ مَشْهُودًا',
+    transliteration:"Wa-qur'āna l-fajri inna qur'āna l-fajri kāna mashhūdā",
+    translation:'And [observe] the recitation of dawn (Fajr). Indeed, the recitation of dawn is ever witnessed.',
+    heading:'The Witnessed Dawn',
+    body:'The recitation of Fajr is witnessed — by the angels of night departing and the angels of day arriving. Begin each dawn with His words.',
+    fullVerseContext:"This verse specifically singles out Fajr among all prayers as 'witnessed' — Mash-hud. The scholars explain that this witnessing is uniquely double: the angels of the night who monitored our deeds during the night descend to report to Allah while the angels of the day ascend. Both groups witness the Fajr prayer together. In Ramadan, when one wakes for suhoor, this creates a perfect opportunity to catch this doubly-blessed prayer.",
+    fullArabicExtended:'أَقِمِ الصَّلَاةَ لِدُلُوكِ الشَّمْسِ إِلَىٰ غَسَقِ اللَّيْلِ\nوَقُرْآنَ الْفَجْرِ ۖ\nإِنَّ قُرْآنَ الْفَجْرِ كَانَ مَشْهُودًا ﴿٧٨﴾\nوَمِنَ اللَّيْلِ فَتَهَجَّدْ بِهِ نَافِلَةً لَّكَ\nعَسَىٰ أَن يَبْعَثَكَ رَبُّكَ مَقَامًا مَّحْمُودًا ﴿٧٩﴾',
+    fullTranslation:'Establish prayer at the decline of the sun until the darkness of the night and [observe] the Quran of dawn — indeed, the recitation of dawn is ever witnessed [78]. And from the night, pray with it as additional worship for yourself; it may be that your Lord will raise you to a praised station [79].',
+    tip:'Read the last 3 surahs (Ikhlas, Falaq, Nas) three times at Fajr.',
+    tipIcon:'🌄',
+    ref:'Surah Al-Isra 17:78–79',
+    date:'22nd Ramadan 1447',
+    benefits:['Fajr prayer witnessed by two shifts of angels','Catching Fajr is linked to the praised station (Maqam Mahmood)','Rising for suhoor enables tahajjud beforehand','The dawn Quran has unique power and impact'],
+    whenToRecite:['Before beginning Fajr prayer','To motivate waking for suhoor','As a reminder of the angels surrounding Fajr worshippers'],
+    hadithNote:"'Whoever prays Fajr is under the protection of Allah.' [Muslim 657] — Begin the day under divine protection by not missing this witnessed prayer."
+  },
+  {
+    id:23,type:'dua',theme:'theme-dua',
+    arabic:'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ',
+    transliteration:"Yā Ḥayyu Yā Qayyūm, bi-raḥmatika astagīth, aṣliḥ lī sha'nī kullahu wa-lā takilnī ilā nafsī ṭarfata ʿayn",
+    translation:'O Ever-Living, O Eternal Sustainer, by Your mercy I seek help. Rectify all my affairs and do not leave me to myself even for the blink of an eye.',
+    heading:'Call on the Ever-Living',
+    body:"Ya Hayyu, Ya Qayyum — O Ever-Living, O Eternal Sustainer. This name of Allah dissolves every difficulty and illuminates every darkness.",
+    fullVerseContext:"Al-Hayyu (the Ever-Living) and Al-Qayyum (the Eternal Sustainer of all creation) are considered among the greatest names of Allah. Ayat Al-Kursi also begins with these two names. The du'a then makes two powerful requests: (1) complete rectification of ALL affairs, and (2) not to be left to oneself even for a blink — acknowledging that without Allah's support, humans cannot function properly. This du'a was recommended by the Prophet ﷺ to be said in the morning.",
+    fullArabicExtended:'عَنْ أَنَسِ بْنِ مَالِكٍ رَضِيَ اللَّهُ عَنْهُ:\nأَنَّ فَاطِمَةَ رَضِيَ اللَّهُ عَنْهَا جَاءَتِ النَّبِيَّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ تَسْأَلُهُ خَادِمًا\nفَقَالَ لَهَا: أَلَا أَدُلُّكِ عَلَى مَا هُوَ خَيْرٌ لَكِ مِنْ خَادِمٍ؟\nقُولِي: يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ\nأَصْلِحْ لِي شَأْنِي كُلَّهُ\nوَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ',
+    fullTranslation:'On the authority of Anas (RA): Fatimah (RA) came to the Prophet ﷺ asking for a servant. He said to her: "Shall I not direct you to something better than a servant? Say: O Ever-Living, O Eternal Sustainer, by Your mercy I seek help. Rectify all my affairs and do not leave me to myself even for the blink of an eye."',
+    tip:'Repeat this 40 times during any moment of difficulty today.',
+    tipIcon:'💫',
+    ref:'Tirmidhi 3524 · Nasa\'i (Hasan)',
+    date:'23rd Ramadan 1447',
+    benefits:['Contains the greatest names of Allah (Al-Hayyu, Al-Qayyum)','Given by the Prophet ﷺ as better than a human helper','Covers all affairs — spiritual, physical, worldly, and eternal','Acknowledges complete dependence on Allah'],
+    whenToRecite:['Every morning as a morning dhikr','During any difficulty or hardship','40 times in a sitting for powerful effect','In sujood during night prayer'],
+    hadithNote:"Al-Hayyu and Al-Qayyum appear in Ayat Al-Kursi — the greatest verse in the Quran [Bukhari 2311]. These names carry the weight of divine existence and sustaining power."
+  },
+  {
+    id:24,type:'hadith',theme:'theme-hadith',
+    arabic:'كَانَ النَّبِيُّ إِذَا دَخَلَ الْعَشْرُ شَدَّ مِئْزَرَهُ وَأَحْيَا لَيْلَهُ وَأَيْقَظَ أَهْلَهُ',
+    transliteration:"Kāna n-nabiyyu idhā dakhala l-ʿashru shadda mi'zarahu wa-aḥyā laylahu wa-ayqaẓa ahlahu",
+    translation:'When the last ten nights began, the Prophet ﷺ would tighten his belt, spend the night awake, and wake his family.',
+    heading:'Seek It in the Last Ten',
+    body:'The Prophet ﷺ would tighten his belt in the last ten nights — worshipping more intensely, waking his family, seeking Laylatul Qadr.',
+    fullVerseContext:"'Shadda mi'zarahu' (tightened his belt) is an Arabic idiom meaning he intensified his effort and devoted himself fully — some scholars also note it implied less time with his wives, devoting entirely to worship. 'Ahya laylahu' — he brought the night alive with prayer, Quran recitation, dhikr, and du'a. 'Ayqadha ahlahu' — he woke his family, not keeping this spiritual treasure to himself alone.",
+    fullArabicExtended:'عَنْ عَائِشَةَ رَضِيَ اللَّهُ عَنْهَا قَالَتْ:\nكَانَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ\nإِذَا دَخَلَ الْعَشْرُ الْأَوَاخِرُ\nشَدَّ مِئْزَرَهُ\nوَأَحْيَا لَيْلَهُ\nوَأَيْقَظَ أَهْلَهُ',
+    fullTranslation:'On the authority of Aisha (RA): When the last ten days arrived, the Prophet ﷺ would tighten his belt, bring his nights alive (with worship), and wake his family.',
+    tip:"On odd nights: pray tahajjud, make long du'a, read Quran till dawn.",
+    tipIcon:'🌙',
+    ref:'Sahih Muslim 1169 · Sahih Bukhari 2024',
+    date:'24th Ramadan 1447',
+    benefits:['Following the exact prophetic model for the last ten nights','Maximum spiritual effort in the most valuable nights','Communal worship — bringing family into the blessing','Leaving no stone unturned in the pursuit of Laylatul Qadr'],
+    whenToRecite:['As the 21st night begins','To motivate the family for night worship','When feeling tired — remember the Prophet ﷺ\'s example'],
+    hadithNote:"'Whoever stands in prayer on Laylatul Qadr with faith and seeking reward, his previous sins are forgiven.' [Bukhari 1901] — One night can change everything."
+  },
+  {
+    id:25,type:'quran',theme:'theme-quran',
+    arabic:'لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ ۝ تَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم',
+    transliteration:"Laylatu l-qadri khayrun min alfi shahr, tanazzalu l-malā'ikatu wa-r-rūḥu fīhā bi-idhni rabbihim",
+    translation:'The Night of Decree is better than a thousand months. The angels and the Spirit descend therein by permission of their Lord.',
+    heading:'A Night Worth a Lifetime',
+    body:'One night. Better than a thousand months — 83 years. Tonight could be Laylatul Qadr. Pray as if it is. It very well might be.',
+    fullVerseContext:"'Alfī shahr' — a thousand months. The scholars say this was revealed to comfort the Prophet ﷺ when he heard that a man of Bani Isra'il worshipped Allah for 1,000 months and he was saddened that his Ummah's lives were shorter. So Allah gave them a night worth more than all of that. The angels that descend are uncountable — more numerous than the pebbles of the earth, according to some narrations.",
+    fullArabicExtended:'لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ ﴿٣﴾\nتَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا\nبِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ ﴿٤﴾\nسَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ ﴿٥﴾',
+    fullTranslation:'The Night of Decree is better than a thousand months [3]. The angels and the Spirit descend therein by permission of their Lord for every matter [4]. Peace it is until the emergence of dawn [5].',
+    tip:'Stay up tonight. Your entire life could hinge on this one night.',
+    tipIcon:'✨',
+    ref:'Surah Al-Qadr 97:3–5',
+    date:'25th Ramadan 1447',
+    benefits:['A single night surpasses 83 years of worship','Angels descend for every single worshipper','Peace and safety reign until Fajr','Decreed in the Quran — its reward is guaranteed'],
+    whenToRecite:['Read Surah Al-Qadr in full on the 25th night','Use as motivation to stay awake','Teach children about the value of this night'],
+    hadithNote:"Ibn Umar (RA) narrated that some companions saw Laylatul Qadr in the last 7 nights. The Prophet ﷺ said: 'Seek it in the last 7 nights.' [Bukhari 2015] — The 25th, 27th, and 29th are the prime candidates."
+  },
+  {
+    id:26,type:'iftar',theme:'theme-iftar',
+    arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكَسَلِ وَالْهَرَمِ وَالْمَأْثَمِ وَالْمَغْرَمِ',
+    transliteration:"Allāhumma innī aʿūdhu bika mina l-kasali wa-l-harami wa-l-ma'thami wa-l-maghram",
+    translation:'O Allah, I seek refuge in You from laziness, old age, sin, and debt.',
+    heading:'Fight the End-of-Month Fatigue',
+    body:'As Ramadan nears its end, the soul grows weary — but this is the test. The last days are the most valuable. Do not slow down now.',
+    fullVerseContext:"The Prophet ﷺ recited this du'a every morning and evening. 'Kasal' (laziness) is singled out as a spiritual disease — and it is particularly tempting near the end of Ramadan when fatigue sets in. The Prophet ﷺ explicitly sought refuge from it. This du'a reminds us that the final stretch of Ramadan requires an extra push — the 'second wind' that separates the determined from the casual.",
+    fullArabicExtended:'عَنْ أَنَسٍ رَضِيَ اللَّهُ عَنْهُ قَالَ:\nكَانَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يَقُولُ:\nاللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكَسَلِ\nوَالْهَرَمِ وَالْمَأْثَمِ وَالْمَغْرَمِ\nاللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ\nوَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ',
+    fullTranslation:'On the authority of Anas (RA): The Prophet ﷺ would say: "O Allah, I seek refuge in You from laziness, old age, sin, and debt. O Allah, I seek refuge in You from the punishment of the grave and from the trials of life and death."',
+    tip:'Protect the last 4 nights with focused dhikr and Quran.',
+    tipIcon:'⚡',
+    ref:'Sahih Bukhari 6369 · Sahih Muslim 589',
+    date:'26th Ramadan 1447',
+    benefits:['Protection from the greatest spiritual enemy: laziness','A morning and evening dhikr of the Prophet ﷺ','Renews determination for the final push','Seeks protection from debt which causes constant worry'],
+    whenToRecite:['Every morning and evening','When feeling Ramadan fatigue','Before the last few nights of worship'],
+    hadithNote:"'A person is tested by his ending.' — Arabic wisdom echoed in hadith. The way Ramadan ends sets the tone for the rest of the year. Guard your final days."
+  },
+  {
+    id:27,type:'dua',theme:'theme-dua',
+    arabic:'اللَّهُمَّ اجْعَلْ رَمَضَانَ سَبَبًا لِمَغْفِرَتِنَا وَعِتْقِنَا مِنَ النَّارِ وَقَبُولِ أَعْمَالِنَا',
+    transliteration:"Allāhumma j'al ramaḍāna sababan li-maghfiratinā wa-ʿitqinā mina n-nāri wa-qabūli aʿmālinā",
+    translation:'O Allah, make Ramadan a means of our forgiveness, our freedom from the Fire, and the acceptance of our deeds.',
+    heading:'Make This Month Your Turning Point',
+    body:'Ask Allah to make this Ramadan the reason for your sins being forgiven, your heart being healed, your life being transformed.',
+    fullVerseContext:"This is a du'a of the scholars, capturing the three gifts of Ramadan: (1) Maghfirah — complete forgiveness, (2) Itq min al-Nar — liberation from the Fire (explicitly promised for many Ramadan worshippers each night), and (3) Qabool al-A'mal — acceptance of deeds. The word 'sabab' (means/cause) reminds us that Ramadan is not the end in itself but a doorway — the door must lead somewhere lasting.",
+    fullArabicExtended:'اللَّهُمَّ اجْعَلْ رَمَضَانَ سَبَبًا\nلِمَغْفِرَتِنَا مِنَ الذُّنُوبِ\nوَعِتْقِنَا مِنَ النَّارِ\nوَقَبُولِ أَعْمَالِنَا\nوَبُلُوغِنَا رَمَضَانَ الْقَادِمَ\nوَأَنْتَ رَاضٍ عَنَّا',
+    fullTranslation:'O Allah, make Ramadan a means of our forgiveness from sins, our freedom from the Fire, the acceptance of our deeds, our reaching the next Ramadan, while You are pleased with us.',
+    tip:'Write a letter to Allah tonight — pour out your whole heart.',
+    tipIcon:'📝',
+    ref:'Islamic Scholarly Tradition',
+    date:'27th Ramadan 1447',
+    benefits:['Encompasses all three gifts of Ramadan in one du\'a','Includes a prayer for reaching future Ramadans','Reflects the spirit of these last three nights','Highly recommended du\'a for the last ten nights'],
+    whenToRecite:['On the 27th night (one of the most likely Laylatul Qadr nights)','At the end of each taraweeh','When writing a personal du\'a list'],
+    hadithNote:"'Every night of Ramadan, Allah frees people from the Fire.' [Ahmad] — Ask specifically to be among those freed. Name yourself in your du'a; be specific."
+  },
+  {
+    id:28,type:'hadith',theme:'theme-hadith',
+    arabic:'مَنْ صَامَ رَمَضَانَ ثُمَّ أَتْبَعَهُ سِتًّا مِنْ شَوَّالٍ كَانَ كَصِيَامِ الدَّهْرِ',
+    transliteration:"Man ṣāma ramaḍāna thumma atbaʿahu sittan min shawwālin kāna ka-ṣiyāmi d-dahr",
+    translation:'Whoever fasts Ramadan and follows it with six days of Shawwal, it will be as if he fasted for the entire year.',
+    heading:'Continue After Ramadan',
+    body:'Whoever fasts Ramadan and follows it with six days of Shawwal, it is as if he fasted the entire year. Plan now, so the habit survives.',
+    fullVerseContext:"The mathematical logic: Ramadan = 30 days × 10x multiplier = 300 days. Six days of Shawwal × 10x = 60 days. Total = 360 days = the Islamic year. This hadith provides a roadmap to maintain the Ramadan spirit throughout the year. Scholars recommend not starting these 6 days until after Eid is complete, and they can be fasted any time during the month of Shawwal.",
+    fullArabicExtended:'عَنْ أَبِي أَيُّوبَ الْأَنْصَارِيِّ رَضِيَ اللَّهُ عَنْهُ:\nأَنَّ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ:\nمَنْ صَامَ رَمَضَانَ\nثُمَّ أَتْبَعَهُ سِتًّا مِنْ شَوَّالٍ\nكَانَ كَصِيَامِ الدَّهْرِ',
+    fullTranslation:'On the authority of Abu Ayyub Al-Ansari (RA): The Messenger of Allah ﷺ said: "Whoever fasts Ramadan and then follows it with six days of Shawwal — it is as if he fasted the entire year."',
+    tip:'Mark 6 days of Shawwal fasting in your calendar tonight.',
+    tipIcon:'📅',
+    ref:'Sahih Muslim 1164 · Tirmidhi 759',
+    date:'28th Ramadan 1447',
+    benefits:['Complete year\'s fasting reward with 36 total days','Maintains the spiritual momentum of Ramadan','An easy way to carry Ramadan\'s spirit into the new month','One of the most reward-efficient acts in the year'],
+    whenToRecite:['When planning Shawwal fasts','Share with family before Eid','As motivation for the day after Eid'],
+    hadithNote:"These 6 days can be fasted consecutively or separately throughout Shawwal. They begin after Eid Al-Fitr (1st Shawwal is Eid — do not fast it). Any 6 days in the rest of Shawwal count."
+  },
+  {
+    id:29,type:'suhoor',theme:'theme-suhoor',
+    arabic:'يَا بَاسِطَ الْيَدَيْنِ بِالْعَطَاءِ ارْحَمْنَا وَاغْفِرْ لَنَا وَتَقَبَّلْ مِنَّا صِيَامَنَا وَقِيَامَنَا',
+    transliteration:"Yā bāsiṭa l-yadayni bil-ʿaṭā'i irḥamnā wa-ghfir lanā wa-taqabbal minnā ṣiyāmanā wa-qiyāmanā",
+    translation:'O You Who extends both hands with generosity — have mercy on us, forgive us, and accept from us our fasting and our night prayer.',
+    heading:'The Final Suhoor',
+    body:'You rise in the dark for perhaps your last suhoor of this blessed month. Taste the silence. Give thanks for every meal that sustained your fast.',
+    fullVerseContext:"'Bāsiṭ al-yadayn' — the One who opens His hands generously — is an expression of Allah's infinite generosity. This du'a for the final suhoor asks for three things: mercy, forgiveness, and acceptance. In the last night before Eid, the pre-dawn moment carries enormous weight — the Quran mentions that the people of taqwa would spend their nights in little sleep, making du'a before dawn. These final suhoor hours are among the most precious in the entire year.",
+    fullArabicExtended:'يَا بَاسِطَ الْيَدَيْنِ بِالْعَطَاءِ\nارْحَمْنَا وَاغْفِرْ لَنَا\nوَتَقَبَّلْ مِنَّا صِيَامَنَا وَقِيَامَنَا\nوَأَعِنَّا عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ\nاللَّهُمَّ أَدْخِلْنَا الْجَنَّةَ مَعَ الْأَبْرَارِ',
+    fullTranslation:'O You Who extends both hands with generosity — have mercy on us, forgive us, and accept from us our fasting and our night prayer. Aid us in Your remembrance, Your gratitude, and the excellence of Your worship. O Allah, enter us into Paradise with the righteous.',
+    tip:"Make du'a for the entire Ummah in this final pre-dawn hour.",
+    tipIcon:'🌌',
+    ref:'Islamic Scholarly Tradition · Inspired by Surah Adh-Dhariyat 51:15–18',
+    date:'29th Ramadan 1447',
+    benefits:['A complete du\'a for the final nights of Ramadan','Asks for acceptance of the entire month\'s worship','Includes the Ummah — a du\'a that earns reward for all','Ends with the ultimate request: Paradise'],
+    whenToRecite:['In the final suhoor of Ramadan','In the last night\'s tahajjud','As you sense the month coming to a close'],
+    hadithNote:"'In the night, there is an hour during which no Muslim stands and asks Allah for good in this world or the Hereafter, except that He gives it to him. And that is in every night.' [Muslim 757] — These final nights carry this promise multiplied."
+  },
+  {
+    id:30,type:'quran',theme:'theme-quran',
+    arabic:'وَلِتُكْمِلُوا الْعِدَّةَ وَلِتُكَبِّرُوا اللَّهَ عَلَىٰ مَا هَدَاكُمْ وَلَعَلَّكُمْ تَشْكُرُونَ',
+    transliteration:"Wa-litukmiluā l-ʿiddata wa-litukabbirū llāha ʿalā mā hadākum wa-laʿallakum tashkurūn",
+    translation:'And complete the count, and glorify Allah for having guided you, and perhaps you will be grateful.',
+    heading:'Complete the Blessed Month',
+    body:'You made it. Thirty days of fasting, prayer, and striving. Allah saw every moment — the hunger, the tears, the quiet worship in the night.',
+    fullVerseContext:"This verse — from the Ramadan legislation in Surah Al-Baqarah — commands the completion of the month and Takbir (saying Allahu Akbar). The Takbir of Eid is directly rooted in this verse. 'Litukabbirū' — glorify Allah for the guidance He gave you. You didn't fast by your own strength; He guided you to it. The final word is 'tashkurūn' — perhaps you will be grateful. After 30 days, gratitude is the final gift Ramadan leaves in the heart.",
+    fullArabicExtended:'...وَمَن كَانَ مَرِيضًا أَوْ عَلَىٰ سَفَرٍ فَعِدَّةٌ مِّنْ أَيَّامٍ أُخَرَ ۗ\nيُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ وَلَا يُرِيدُ بِكُمُ الْعُسْرَ\nوَلِتُكْمِلُوا الْعِدَّةَ\nوَلِتُكَبِّرُوا اللَّهَ عَلَىٰ مَا هَدَاكُمْ\nوَلَعَلَّكُمْ تَشْكُرُونَ ﴿١٨٥﴾',
+    fullTranslation:'...Allah intends ease for you and does not intend hardship for you. And [He wants] for you to complete the count and to glorify Allah for that to which He has guided you; and perhaps you will be grateful.',
+    tip:'After Eid prayer, thank Allah and commit to carrying Ramadan forward.',
+    tipIcon:'🎉',
+    ref:'Surah Al-Baqarah 2:185',
+    date:'30th Ramadan 1447',
+    benefits:['Completing Ramadan is itself a commanded act of worship','The Eid Takbir fulfills a Quranic commandment','Gratitude is the crown that completes the month','The month ends with ease — Allah\'s mercy in completing it'],
+    whenToRecite:['At the end of the 30th day','During the Eid Takbir procession','As a remembrance of completing this blessed month'],
+    hadithNote:"'There are two moments of joy for the fasting person: joy when he breaks his fast, and joy when he meets his Lord.' [Bukhari 1904] — Today is the first joy. The greatest joy awaits."
+  }
+];
+
+const BADGE_COLORS={quran:'#4CAF82',dua:'#9C6ED4',hadith:'#D46060',iftar:'#D4A030',suhoor:'#5B8FC4'};
+const BADGE_LABELS={quran:'Quran Ayah',dua:"Du'a",hadith:'Hadith',iftar:'Iftar',suhoor:'Suhoor'};
+const THEME_EMOJIS={quran:'📖',dua:'🤲',hadith:'📜',iftar:'🌙',suhoor:'⭐'};
+
+/* ── CURRENT DAY ── */
+const RAMADAN_START=new Date('2026-03-01T00:00:00');
+function getCurrentRamadanDay(){
+  const diff=Math.floor((new Date()-RAMADAN_START)/86400000)+1;
+  return Math.max(1,Math.min(30,diff));
+}
+const todayDay=getCurrentRamadanDay();
+let currentModalDay=todayDay;
+let likedDays=new Set(JSON.parse(localStorage.getItem('ramadan_liked')||'[]'));
+let readCount=parseInt(localStorage.getItem('ramadan_read')||'0');
+
+/* ── STARS ── */
+const sf=document.getElementById('starfield');
+for(let i=0;i<180;i++){
+  const d=document.createElement('div');d.className='star';
+  const sz=Math.random()<.15?Math.random()*2+1.5:Math.random()<.5?Math.random()+0.5:Math.random()*.6+.2;
+  d.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*80}%;width:${sz}px;height:${sz}px;--d:${(Math.random()*4+2).toFixed(1)}s;--dl:${-(Math.random()*5).toFixed(2)}s;--mn:${(Math.random()*.08+.03).toFixed(2)};--mx:${(Math.random()*.7+.2).toFixed(2)};`;
+  sf.appendChild(d);
+}
+
+/* ── PROGRESS ── */
+const pct=(todayDay/30)*100;
+document.getElementById('progress-fill').style.width=pct+'%';
+document.getElementById('prog-mid').textContent=`Day ${todayDay} of 30`;
+document.getElementById('current-day-label').textContent=`Day ${todayDay} of 30`;
+document.getElementById('stat-days').textContent=todayDay;
+document.getElementById('stat-left').textContent=30-todayDay;
+document.getElementById('streak-count').textContent=`${todayDay} Day Streak`;
+
+/* ── GEO SVG ── */
+function geoSVG(size=80){
+  return `<svg viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="gp${size}${Math.random().toString(36).substr(2,4)}" x="0" y="0" width="${size}" height="${size}" patternUnits="userSpaceOnUse"><path d="M${size/2},${size*.08} L${size*.57},${size*.37} L${size*.87},${size*.37} L${size*.63},${size*.55} L${size*.72},${size*.86} L${size/2},${size*.68} L${size*.28},${size*.86} L${size*.37},${size*.55} L${size*.13},${size*.37} L${size*.43},${size*.37} Z" fill="none" stroke="#C9963C" stroke-width="0.5" opacity="0.8"/><circle cx="${size/2}" cy="${size/2}" r="${size*.1}" fill="none" stroke="#C9963C" stroke-width="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(#gp${size})"/></svg>`;
+}
+
+/* ── TOAST ── */
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+/* ── SHARE ── */
+function shareDay(day){
+  const text=`✨ Day ${day.id} of Ramadan 2026 — ${THEME_EMOJIS[day.type]}\n\n${day.heading}\n\n"${day.body}"\n\n💡 ${day.tip}\n\n📖 ${day.ref}\n\n#Ramadan2026 #RamadanMubarak`;
+  if(navigator.clipboard)navigator.clipboard.writeText(text).then(()=>showToast('✦ Copied · Ready to share'));
+  else showToast('✦ Text ready');
+}
+
+/* ── LIKE ── */
+function saveLikes(){localStorage.setItem('ramadan_liked',JSON.stringify([...likedDays]))}
+
+/* ══════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════ */
+function openModal(id){
+  currentModalDay=id;
+  const day=DAYS[id-1];
+  readCount++;
+  localStorage.setItem('ramadan_read',readCount);
+  document.getElementById('stat-read').textContent=readCount;
+  renderModalContent(day);
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  updateModalLikeBtn();
+}
+
+function closeModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function handleOverlayClick(e){
+  if(e.target===document.getElementById('modal-overlay'))closeModal();
+}
+
+function navModal(dir){
+  const next=currentModalDay+dir;
+  if(next>=1&&next<=30)openModal(next);
+}
+
+function shareModalDay(){shareDay(DAYS[currentModalDay-1])}
+
+function toggleModalLike(){
+  const id=currentModalDay;
+  if(likedDays.has(id))likedDays.delete(id);
+  else likedDays.add(id);
+  saveLikes();updateModalLikeBtn();
+  showToast(likedDays.has(id)?'✦ Saved to favorites':'✦ Removed from favorites');
+}
+
+function updateModalLikeBtn(){
+  const btn=document.getElementById('modal-like-btn');
+  if(!btn)return;
+  const liked=likedDays.has(currentModalDay);
+  btn.classList.toggle('liked',liked);
+  btn.querySelector('span').textContent=liked?'Saved':'Save';
+}
+
+function renderModalContent(day){
+  const clr=BADGE_COLORS[day.type];
+  const prev=currentModalDay>1,next=currentModalDay<30;
+  document.getElementById('nav-prev').disabled=!prev;
+  document.getElementById('nav-next').disabled=!next;
+  document.getElementById('nav-info').textContent=`Day ${day.id} of 30`;
+
+  // Benefits grid
+  const benefitsHTML=day.benefits?`
+    <div class="modal-section">
+      <div class="modal-section-title">Key Benefits</div>
+      <div class="dua-benefits">
+        ${day.benefits.map((b,i)=>`<div class="benefit-card"><div class="benefit-icon">${['✨','💚','🌟','🛡️'][i%4]}</div><div class="benefit-text">${b}</div></div>`).join('')}
+      </div>
+    </div>`:'';
+
+  // When to recite
+  const reciteHTML=day.whenToRecite?`
+    <div class="modal-section">
+      <div class="modal-section-title">When to Recite</div>
+      <div class="recite-times">
+        ${day.whenToRecite.map(t=>`<div class="recite-pill"><span class="recite-icon">🕌</span><span class="recite-text">${t}</span></div>`).join('')}
+      </div>
+    </div>`:'';
+
+  // Hadith note
+  const hadithHTML=day.hadithNote?`
+    <div class="modal-section">
+      <div class="modal-section-title">Scholar's Note</div>
+      <div class="context-box"><div class="context-text">${day.hadithNote}</div></div>
+    </div>`:'';
+
+  // Hadith chain (for hadith type)
+  const chainHTML=day.type==='hadith'?`
+    <div class="modal-section">
+      <div class="modal-section-title">Narration Chain</div>
+      <div class="hadith-chain">
+        <div class="chain-item"><div class="chain-dot"></div><div><div class="chain-text">The Messenger of Allah ﷺ said...</div><div class="chain-label">Primary Narrator</div></div></div>
+        <div class="chain-item"><div class="chain-dot"></div><div><div class="chain-text">${day.ref.split('·')[0].trim()}</div><div class="chain-label">Source / Grade: Sahih (Authentic)</div></div></div>
+      </div>
+    </div>`:'';
+
+  document.getElementById('modal-content').innerHTML=`
+    <div style="position:relative">
+      <div class="modal-type-row">
+        <div class="modal-type-badge">
+          <div class="badge-dot" style="--badge-clr:${clr}"></div>
+          <div class="badge-text">${BADGE_LABELS[day.type]}</div>
+        </div>
+        <div class="modal-day-tag">Day ${day.id}</div>
+        <div style="flex:1"></div>
+        <div class="modal-date">${day.date}</div>
+      </div>
+
+      <!-- HEADING -->
+      <div style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(22px,4vw,32px);color:var(--goldfade);line-height:1.2;margin-bottom:20px">${day.heading}</div>
+
+      <!-- ARABIC BLOCK -->
+      <div class="modal-arabic-block">
+        <div class="modal-arabic-main">${day.arabic}</div>
+        <div class="modal-transliteration">${day.transliteration}</div>
+        <div class="modal-translation">"${day.translation}"</div>
+      </div>
+
+      <!-- REFLECTION -->
+      <div class="modal-section">
+        <div class="modal-section-title">Reflection</div>
+        <div class="full-verse-box">
+          <div class="full-verse-translation">${day.body}</div>
+        </div>
+      </div>
+
+      <!-- FULL VERSE / HADITH TEXT -->
+      <div class="modal-section">
+        <div class="modal-section-title">${day.type==='hadith'?'Full Hadith Text':'Complete Verse — '+day.ref}</div>
+        <div class="full-verse-box">
+          <div class="full-verse-arabic">${day.fullArabicExtended}</div>
+          <div class="full-verse-translation">${day.fullTranslation}</div>
+          <div class="full-verse-ref">${day.ref}</div>
+        </div>
+      </div>
+
+      <!-- CONTEXT -->
+      <div class="modal-section">
+        <div class="modal-section-title">Context & Tafsir</div>
+        <div class="context-box"><div class="context-text">${day.fullVerseContext}</div></div>
+      </div>
+
+      ${chainHTML}
+
+      <!-- TIP BOX -->
+      <div class="modal-section">
+        <div class="modal-section-title">Daily Practice</div>
+        <div class="full-verse-box" style="background:rgba(26,92,88,.08);border-color:rgba(26,180,160,.2)">
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <span style="font-size:22px;flex-shrink:0">${day.tipIcon}</span>
+            <div>
+              <div style="font-size:8px;letter-spacing:.3em;color:rgba(26,180,160,.6);text-transform:uppercase;margin-bottom:6px">Tip for Today</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(247,240,224,.7);line-height:1.7">${day.tip}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      ${benefitsHTML}
+      ${reciteHTML}
+      ${hadithHTML}
+
+      <!-- NEXT PREV NAVIGATION CARDS -->
+      <div style="display:flex;gap:12px;margin-top:8px">
+        ${currentModalDay>1?`<div onclick="navModal(-1)" style="flex:1;padding:14px;border-radius:12px;background:rgba(201,150,60,.05);border:1px solid rgba(201,150,60,.12);cursor:pointer;transition:.2s" onmouseover="this.style.background='rgba(201,150,60,.1)'" onmouseout="this.style.background='rgba(201,150,60,.05)'"><div style="font-size:7px;letter-spacing:.3em;color:rgba(201,150,60,.4);text-transform:uppercase;margin-bottom:4px">← Previous</div><div style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--goldfade)">${DAYS[currentModalDay-2].heading}</div></div>`:'<div style="flex:1"></div>'}
+        ${currentModalDay<30?`<div onclick="navModal(1)" style="flex:1;padding:14px;border-radius:12px;background:rgba(201,150,60,.05);border:1px solid rgba(201,150,60,.12);cursor:pointer;text-align:right;transition:.2s" onmouseover="this.style.background='rgba(201,150,60,.1)'" onmouseout="this.style.background='rgba(201,150,60,.05)'"><div style="font-size:7px;letter-spacing:.3em;color:rgba(201,150,60,.4);text-transform:uppercase;margin-bottom:4px">Next →</div><div style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--goldfade)">${DAYS[currentModalDay].heading}</div></div>`:''}
+      </div>
+    </div>
+  `;
+  document.getElementById('modal-content').scrollTop=0;
+}
+
+/* ══════════════════════════════════════════
+   CARDS
+══════════════════════════════════════════ */
+function renderFeatured(day){
+  document.getElementById('featured-area').innerHTML=`
+    <div style="width:100%;max-width:700px;margin:0 auto 36px;">
+      <div class="featured-card" onclick="openModal(${day.id})" style="cursor:pointer">
+        <div class="featured-badge">✦ Today · Day ${day.id}</div>
+        <div class="featured-inner">
+          <div class="featured-geo">${geoSVG(90)}</div>
+          <div class="featured-top">
+            <div class="featured-day-num">${String(day.id).padStart(2,'0')}</div>
+            <div class="featured-moon">☽</div>
+          </div>
+          <div class="featured-arabic">${day.arabic}</div>
+          <div class="featured-title">${day.heading}</div>
+          <div class="featured-sub">${day.date} &nbsp;·&nbsp; ${BADGE_LABELS[day.type]}</div>
+          <div class="featured-verse-box">
+            <div class="featured-verse">${day.body}</div>
+            <div class="featured-ref">${day.ref}</div>
+          </div>
+          <div class="featured-verse-box" style="margin-bottom:24px;background:rgba(26,92,88,.08);border-color:rgba(26,92,88,.3)">
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <span style="font-size:18px">${day.tipIcon}</span>
+              <div>
+                <div style="font-size:8px;letter-spacing:.3em;color:rgba(26,180,160,.5);text-transform:uppercase;margin-bottom:5px">Daily Tip</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(247,240,224,.65);line-height:1.7">${day.tip}</div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-actions">
+            <button class="big-read-btn" onclick="event.stopPropagation();openModal(${day.id})">
+              <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Read Full Du'a
+            </button>
+            <button class="big-share-btn" onclick="event.stopPropagation();shareDay(DAYS[${day.id-1}])">
+              <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share
+            </button>
+            <button class="big-save-btn" onclick="event.stopPropagation();toggleFeaturedLike(${day.id},this)">
+              <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              ${likedDays.has(day.id)?'Saved':'Save'}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function toggleFeaturedLike(id,btn){
+  if(likedDays.has(id))likedDays.delete(id);else likedDays.add(id);
+  saveLikes();
+  btn.querySelector('span')?null:null;
+  btn.textContent=likedDays.has(id)?'✓ Saved':'Save';
+  showToast(likedDays.has(id)?'✦ Saved to favorites':'✦ Removed');
+}
+
+function renderCard(day){
+  const clr=BADGE_COLORS[day.type];
+  const isToday=day.id===todayDay;
+  return `
+    <div class="day-card ${day.theme}" data-type="${day.type}" style="--ci:${((day.id-1)%12)*.05}s;${isToday?'box-shadow:0 0 40px rgba(201,150,60,.2);':''}" onclick="openModal(${day.id})">
+      <div class="card-geo">${geoSVG(60)}</div>
+      <div class="card-inner">
+        <div class="card-top">
+          <div class="day-number">
+            <div class="day-num-label">Day</div>
+            <div class="day-num-val">${String(day.id).padStart(2,'0')}</div>
+          </div>
+          <div class="day-type-badge">
+            <div class="badge-dot" style="--badge-clr:${clr}"></div>
+            <div class="badge-text">${BADGE_LABELS[day.type]}</div>
+          </div>
+        </div>
+        <div class="card-date-bar">
+          <div class="date-text">${day.date}</div>
+          <div class="date-line"></div>
+        </div>
+        <div class="card-arabic">${day.arabic}</div>
+        <div class="card-heading">${day.heading}</div>
+        <div class="card-body">${day.body.substring(0,110)}…</div>
+        <div class="card-tip">
+          <span class="tip-icon">${day.tipIcon}</span>
+          <span class="tip-text">${day.tip}</span>
+        </div>
+        <div class="card-ref">${day.ref}</div>
+        <div class="card-actions">
+          <div class="action-left">
+            <button class="act-btn ${likedDays.has(day.id)?'liked':''}" onclick="event.stopPropagation();likeCard(${day.id},this)" title="Save">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="read-btn" onclick="event.stopPropagation();openModal(${day.id})" title="Read full">
+              <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Read Full
+            </button>
+          </div>
+          <button class="share-btn" onclick="event.stopPropagation();shareDay(DAYS[${day.id-1}])">
+            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share
+          </button>
+        </div>
+      </div>
+      <div class="card-read-more"><span>Tap to read full du'a ↑</span></div>
+    </div>`;
+}
+
+function likeCard(id,btn){
+  if(likedDays.has(id))likedDays.delete(id);else likedDays.add(id);
+  saveLikes();
+  btn.classList.toggle('liked',likedDays.has(id));
+  showToast(likedDays.has(id)?'✦ Saved to favorites':'✦ Removed from favorites');
+}
+
+/* ── VIEW TOGGLE ── */
+function setView(v){
+  document.getElementById('grid-btn').classList.toggle('active',v==='grid');
+  document.getElementById('feed-btn').classList.toggle('active',v==='feed');
+  document.getElementById('cards-grid').classList.toggle('feed-view',v==='feed');
+}
+
+/* ── FILTER ── */
+function filterCards(type,btn){
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered=type==='all'?DAYS:DAYS.filter(d=>d.type===type);
+  document.getElementById('cards-grid').innerHTML=filtered.map(renderCard).join('');
+}
+
+/* ── KEYBOARD NAVIGATION ── */
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('modal-overlay').classList.contains('open')){
+    if(e.key==='Escape')closeModal();
+    if(e.key==='ArrowLeft'&&currentModalDay>1)navModal(-1);
+    if(e.key==='ArrowRight'&&currentModalDay<30)navModal(1);
+  }
+});
+
+/* ── TOUCH SWIPE IN MODAL ── */
+let touchStartX=0;
+document.getElementById('modal-sheet').addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX},{passive:true});
+document.getElementById('modal-sheet').addEventListener('touchend',e=>{
+  const diff=e.changedTouches[0].clientX-touchStartX;
+  if(Math.abs(diff)>60){
+    if(diff>0&&currentModalDay>1)navModal(-1);
+    if(diff<0&&currentModalDay<30)navModal(1);
+  }},{passive:true});
+
+/* ── INIT ── */
+setTimeout(()=>{document.getElementById('progress-fill').style.width=pct+'%'},100);
+renderFeatured(DAYS[todayDay-1]);
+document.getElementById('cards-grid').innerHTML=DAYS.map(renderCard).join('');
+</script>
+</body>
+</html>
